@@ -1,6 +1,5 @@
 package com.bean.contact;
 
-// TODO: Auto-generated Javadoc
 /**
  * La classe 
  */
