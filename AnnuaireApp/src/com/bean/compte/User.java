@@ -4,15 +4,15 @@ import com.bean.addressbook.AddressBook;
 
 public class User extends Client {
 
+	private static final String PREFIXE = "u";
 	private AddressBook addressBook;
 	
-	// A VERIFIER AVEC LE CREDENTIAL!!!!!!!!!!
-	private String username;
-	private String password;
+	private Credentials credential;
 	
-	public User() {
+	public User(String username, String password) {
 		super();
-		addressBook = new AddressBook();
+		this.credential = new Credentials(PREFIXE + username, password);
+		this.addressBook.setUser(this);
 	}
 
 	/**

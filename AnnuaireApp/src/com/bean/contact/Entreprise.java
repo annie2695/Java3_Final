@@ -32,7 +32,7 @@ public class Entreprise extends Contact {
 	}
 
 	/**
-	 * Méthode pour fixer la varaible nomEntreprise.
+	 * Méthode pour fixer la variable nomEntreprise.
 	 *
 	 * @param nomEntreprise le nouveau nom entreprise
 	 */

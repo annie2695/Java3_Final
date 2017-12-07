@@ -15,6 +15,7 @@ public abstract class Contact implements IBean {
 	
 	public Contact() {
 		this.id = compteur++;
+		this.address.setContact(this);
 	}
 	
 	/**

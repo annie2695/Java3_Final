@@ -1,18 +1,23 @@
 package com.bean.contact;
 
+import com.bean.IBean;
 
+// TODO: Auto-generated Javadoc
 /**
  * La classe address représente l'adresse du contact dans l'annuaire.
  *
  * @author blade
  */
-public class Address {
+public class Address implements IBean{
 
 	private String numeroCivique;
 	private String rue;
 	private String ville;
 	private String codePostal;
 	private String province;
+	private Contact contact;
+	
+	private int id;
 	
 	/**
 	 * Instancie une nouvelle adresse.
@@ -21,6 +26,7 @@ public class Address {
 	 * @param rue the rue
 	 * @param ville the ville
 	 * @param codePostal the code postal
+	 * @param province the province
 	 */
 	public Address(String numeroCivique, String rue, String ville, String codePostal, String province) {
 		super();
@@ -32,7 +38,7 @@ public class Address {
 	}
 
 	/**
-	 * Méthode d'accès à variable numero civique
+	 * Méthode d'accès à variable numero civique.
 	 *
 	 * @return le numero civique
 	 */
@@ -50,7 +56,7 @@ public class Address {
 	}
 
 	/**
-	 * Méthode d'accès à variable rue
+	 * Méthode d'accès à variable rue.
 	 *
 	 * @return la rue
 	 */
@@ -59,7 +65,7 @@ public class Address {
 	}
 
 	/**
-	 * Méthode pour fixer la variable rue
+	 * Méthode pour fixer la variable rue.
 	 *
 	 * @param rue la nouvelle rue
 	 */
@@ -68,7 +74,7 @@ public class Address {
 	}
 
 	/**
-	 * Méthode d'accès à variable ville
+	 * Méthode d'accès à variable ville.
 	 *
 	 * @return la ville
 	 */
@@ -77,7 +83,7 @@ public class Address {
 	}
 
 	/**
-	 * Méthode pour fixer la variable ville
+	 * Méthode pour fixer la variable ville.
 	 *
 	 * @param ville la nouvelle ville
 	 */
@@ -86,7 +92,7 @@ public class Address {
 	}
 
 	/**
-	 * Méthode d'accès à variable codePostal
+	 * Méthode d'accès à variable codePostal.
 	 *
 	 * @return le code postal
 	 */
@@ -95,7 +101,7 @@ public class Address {
 	}
 
 	/**
-	 * Méthode pour fixer la variable codePostal
+	 * Méthode pour fixer la variable codePostal.
 	 *
 	 * @param codePostal le nouveau code postal
 	 */
@@ -103,11 +109,55 @@ public class Address {
 		this.codePostal = codePostal;
 	}
 
+	/**
+	 * Gets the province.
+	 *
+	 * @return the province
+	 */
+	public String getProvince() {
+		return province;
+	}
 
+	/**
+	 * Sets the province.
+	 *
+	 * @param province the new province
+	 */
+	public void setProvince(String province) {
+		this.province = province;
+	}
+
+	/**
+	 * Gets the contact.
+	 *
+	 * @return the contact
+	 */
+	public Contact getContact() {
+		return contact;
+	}
+
+	/**
+	 * Sets the contact.
+	 *
+	 * @param contact the new contact
+	 */
+	public void setContact(Contact contact) {
+		this.contact = contact;
+	}
+
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
 	@Override
 	public String toString() {
 		return "Adresse [numeroCivique=" + numeroCivique + ", rue=" + rue + ", ville=" + ville + ", codePostal="
 				+ codePostal + "]";
+	}
+
+	@Override
+	public int getId() {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 	
 	

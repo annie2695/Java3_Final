@@ -4,6 +4,7 @@ import java.util.Set;
 import java.util.TreeSet;
 
 import com.bean.IBean;
+import com.bean.compte.User;
 import com.bean.contact.Contact;
 
 /**
@@ -18,6 +19,8 @@ public class AddressBook implements IBean {
 	
 	private Set<Contact> favoris;
 	private Set<Contact> listeContacts;
+	
+	private User user;
 	
 	/**
 	 * Constructeur de la classe.
@@ -54,9 +57,28 @@ public class AddressBook implements IBean {
 		return listeContacts;
 	}
 
+	/**
+	 * Méthode d'accès à user.
+	 * @return user
+	 *
+	 */
+	public User getUser() {
+		return user;
+	}
+
+	
+	/**
+	 * Méthode pour fixer la varaible user.
+	 * @param user
+	 */
+	public void setUser(User user) {
+		this.user = user;
+	}
+
 	@Override
 	public String toString() {
-		return "AddressBook [id=" + id + ", favoris=" + favoris + ", listeContacts=" + listeContacts + "]";
+		return "AddressBook [id=" + id + ", favoris=" + favoris + ", listeContacts=" + listeContacts + ", user=" + user
+				+ "]";
 	}
 	
 }

@@ -5,7 +5,7 @@ import com.bean.IBean;
 /**
  * The Class Annuaire.
  */
-public class Annuaire implements IBean {
+public class Annuaire {
 
 	private static volatile Annuaire instance;
 

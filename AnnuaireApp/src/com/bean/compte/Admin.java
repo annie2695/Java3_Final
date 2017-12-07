@@ -2,12 +2,12 @@ package com.bean.compte;
 
 public class Admin extends Client {
 	
-	// A VERIFIER AVEC LE CREDENTIAL!!!!!!!!!!
-	private String username;
-	private String password;
+	private static final String PREFIXE = "a";
 	
-	public Admin() {
-		super();
+	private Credentials credential;
+	
+	public Admin(String username, String password) {
+		this.credential = new Credentials(PREFIXE + username, password);
 	}
 
 }
