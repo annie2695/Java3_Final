@@ -11,7 +11,7 @@
     <Console name="Console" target="SYSTEM_OUT">
       <PatternLayout pattern="%d %-7level %logger{36} - %msg%n"/>
     </Console>
-    <File name="MyFile" fileName="C:/java3/tpFinal_max_annie/logs/TPfinal.log">
+    <File name="MyFile" fileName="C:/java3/tpFinal_max_annie/logs/TPFinal.log">
       <PatternLayout pattern="%d %-7level %logger{36} - %msg%n"/>
     </File>
   </Appenders>

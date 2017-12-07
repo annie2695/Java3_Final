@@ -3,12 +3,10 @@ package com.bean.compte;
 import com.bean.addressbook.AddressBook;
 
 public class User extends Client {
+	
+	private static final String PREFIXE = "u";
 
 	private AddressBook addressBook;
-	
-	// A VERIFIER AVEC LE CREDENTIAL!!!!!!!!!!
-	private String username;
-	private String password;
 	
 	public User() {
 		super();
