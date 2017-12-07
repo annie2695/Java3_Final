@@ -2,8 +2,6 @@ package com.bean.annuaire;
 
 import com.bean.IBean;
 
-
-
 /**
  * The Class Annuaire.
  */
