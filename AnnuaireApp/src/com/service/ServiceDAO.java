@@ -21,7 +21,7 @@ public class ServiceDAO {
 			stream.alias("bean", IBean.class);
 			stream.toXML(bean, new FileOutputStream(path+System.currentTimeMillis()+".xml"));
 		} catch (Exception e) {
-			LOGGER.info("Erreur d'écriture");
+			LOGGER.info("Erreur d'ï¿½criture");
 		}
 		return new File(path).exists();
 	}

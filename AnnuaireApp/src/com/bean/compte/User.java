@@ -3,6 +3,8 @@ package com.bean.compte;
 import com.bean.addressbook.AddressBook;
 
 public class User extends Client {
+	
+	private static final String PREFIXE = "u";
 
 	private static final String PREFIXE = "u";
 	private AddressBook addressBook;
@@ -16,7 +18,7 @@ public class User extends Client {
 	}
 
 	/**
-	 * Méthode d'accès au carnet d'adresse.
+	 * Mï¿½thode d'accï¿½s au carnet d'adresse.
 	 * @return Le carnet d'adresse
 	 */
 	public AddressBook getAddressBook() {
