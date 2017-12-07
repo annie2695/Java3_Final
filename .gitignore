@@ -1,2 +1,24 @@
 
 *.class
+
+AnnuaireWebApp/\.settings/org\.eclipse\.wst\.common\.project\.facet\.core\.xml
+
+AnnuaireWebApp/\.settings/org\.eclipse\.wst\.common\.component
+
+AnnuaireApp/target/classes/log4j2\.xml
+
+AnnuaireApp/\.settings/org\.eclipse\.wst\.common\.project\.facet\.core\.xml
+
+AnnuaireWebApp/\.classpath
+
+AnnuaireApp/\.classpath
+
+AnnuaireApp/target/classes/META-INF/MANIFEST\.MF
+
+AnnuaireApp/src/log4j2\.xml
+
+AnnuaireApp/target/classes/META-INF/maven/AnnuaireApp/AnnuaireApp/pom\.properties
+
+AnnuaireWebApp/target/m2e-wtp/web-resources/META-INF/MANIFEST\.MF
+
+AnnuaireWebApp/target/m2e-wtp/web-resources/META-INF/maven/AnnuaireWebApp/AnnuaireWebApp/pom\.properties
