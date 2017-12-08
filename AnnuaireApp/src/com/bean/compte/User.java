@@ -5,15 +5,13 @@ import com.bean.addressbook.AddressBook;
 public class User extends Client {
 	
 	private static final String PREFIXE = "u";
-
-	private static final String PREFIXE = "u";
 	private AddressBook addressBook;
 	
-	private Credentials credential;
+	private Credentials credentials;
 	
 	public User(String username, String password) {
 		super();
-		this.credential = new Credentials(PREFIXE + username, password);
+		this.credentials = new Credentials(PREFIXE + username, password);
 		this.addressBook.setUser(this);
 	}
 

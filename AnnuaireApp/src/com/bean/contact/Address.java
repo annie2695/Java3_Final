@@ -156,8 +156,7 @@ public class Address implements IBean{
 
 	@Override
 	public int getId() {
-		// TODO Auto-generated method stub
-		return 0;
+		return id;
 	}
 	
 	

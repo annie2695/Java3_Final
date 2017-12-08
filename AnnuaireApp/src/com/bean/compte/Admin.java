@@ -4,10 +4,10 @@ public class Admin extends Client {
 	
 	private static final String PREFIXE = "a";
 	
-	private Credentials credential;
+	private Credentials credentials;
 	
 	public Admin(String username, String password) {
-		this.credential = new Credentials(PREFIXE + username, password);
+		this.credentials = new Credentials(PREFIXE + username, password);
 	}
 
 }

@@ -21,8 +21,7 @@ public abstract class Client implements IBean {
 	 * Constructeur de la classe.
 	 */
 	public Client() {
-		this.id = compteur;
-		compteur++;
+		this.id = compteur++;
 	}
 
 	/**

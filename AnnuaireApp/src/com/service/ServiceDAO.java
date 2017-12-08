@@ -1,7 +1,9 @@
 package com.service;
 
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileOutputStream;
+import java.util.HashSet;
 import java.util.Set;
 
 import org.apache.logging.log4j.LogManager;
@@ -26,8 +28,19 @@ public class ServiceDAO {
 		return new File(path).exists();
 	}
 	
-	public static Set<IBean> loadFromXml() {
-		return null;
+	@SuppressWarnings("unchecked")
+	public static Set<IBean> loadFromXml(String path) {
+		Set<IBean> listeClients = null;
+		try {
+			if(new File(path).exists()){
+				XStream stream = new XStream(new DomDriver());
+				stream.alias("bean", IBean.class);
+				listeClients =  (Set<IBean>) stream.fromXML(new FileInputStream(path));
+			}
+		} catch (Exception e) {
+			LOGGER.info(e.getMessage());
+		}
+		return listeClients;
 	}
 
 }
