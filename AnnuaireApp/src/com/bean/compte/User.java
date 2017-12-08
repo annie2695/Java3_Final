@@ -11,7 +11,8 @@ public class User extends Client {
 	
 	public User(String username, String password) {
 		super();
-		this.credentials = new Credentials(PREFIXE + username, password);
+		this.setCredentials(new Credentials(PREFIXE + username, password));
+		this.addressBook = new AddressBook();
 		this.addressBook.setUser(this);
 	}
 
@@ -21,6 +22,14 @@ public class User extends Client {
 	 */
 	public AddressBook getAddressBook() {
 		return addressBook;
+	}
+
+	public Credentials getCredentials() {
+		return credentials;
+	}
+
+	public void setCredentials(Credentials credentials) {
+		this.credentials = credentials;
 	}
 	
 }
