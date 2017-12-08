@@ -3,7 +3,6 @@ package com.service;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
-import java.util.HashSet;
 import java.util.Set;
 
 import org.apache.logging.log4j.LogManager;
@@ -15,32 +14,31 @@ import com.thoughtworks.xstream.io.xml.DomDriver;
 
 public class ServiceDAO {
 	
-	private static Logger LOGGER = LogManager.getLogger(ServiceDAO.class);
+	private static Logger logger = LogManager.getLogger(ServiceDAO.class);
 
-	public static boolean saveToXml(IBean bean, String path) {
+	public static boolean saveToXml(Set<IBean> listeBean, String path) {
 		try {
 			XStream stream = new XStream(new DomDriver());
-			stream.alias("bean", IBean.class);
-			stream.toXML(bean, new FileOutputStream(path+System.currentTimeMillis()+".xml"));
+			stream.alias("Liste", Set.class);
+			
+			stream.toXML(listeBean, new FileOutputStream(path));
 		} catch (Exception e) {
-			LOGGER.info("Erreur d'ï¿½criture");
+			logger.error("Erreur d'écriture");
 		}
 		return new File(path).exists();
 	}
 	
 	@SuppressWarnings("unchecked")
 	public static Set<IBean> loadFromXml(String path) {
-		Set<IBean> listeClients = null;
 		try {
-			if(new File(path).exists()){
-				XStream stream = new XStream(new DomDriver());
-				stream.alias("bean", IBean.class);
-				listeClients =  (Set<IBean>) stream.fromXML(new FileInputStream(path));
-			}
+			XStream stream = new XStream(new DomDriver());
+			stream.alias("Liste", Set.class);
+			
+			return (Set<IBean>) stream.fromXML(new FileInputStream(path));
 		} catch (Exception e) {
-			LOGGER.info(e.getMessage());
+			logger.error(e.getMessage());
 		}
-		return listeClients;
+		return null;
 	}
 
 }

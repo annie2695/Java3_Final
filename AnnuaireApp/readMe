@@ -1,6 +1,0 @@
-chemin pour le fichier de log : C:/java3/tpFinal_max_annie/logs/TPfinal.log
-
-Librairie Externe :
-	log4j-core 2.10.0
-	log4j-api 2.10.0
-	junit 4.12

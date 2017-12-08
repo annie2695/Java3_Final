@@ -11,7 +11,8 @@ import org.junit.Ignore;
 import org.junit.Test;
 
 import com.bean.IBean;
-import com.bean.contact.Particulier;
+import com.bean.compte.Admin;
+import com.bean.compte.User;
 import com.service.Service;
 
 public class ServiceTest {
@@ -21,13 +22,15 @@ public class ServiceTest {
 
 	@Before
 	public void setUp() throws Exception {
-		b1 = new Particulier("123", "patate", "chaloupe", "canape", "shibougamo");
+		b1 = new User("toto", "ytrewq");
+		b2 = new Admin("tata", "ytrewq");
 		listeBean = new HashSet<IBean>();
 	}
 
 	@After
 	public void tearDown() throws Exception {
 		b1 = null;
+		b2 = null;
 		listeBean = null;
 	}
 
@@ -35,11 +38,25 @@ public class ServiceTest {
 	public void testAddBean() {
 		assertTrue(Service.addBean(b1, listeBean));
 	}
-	
-	@Test
+
+	@Ignore
 	public void testDeleteBean() {
 		Service.addBean(b2, listeBean);
 		assertTrue(Service.deleteBean(b2, listeBean));
+	}
+
+	@Ignore
+	public void testGetByid() {
+		Service.addBean(b1, listeBean);
+		Service.addBean(b2, listeBean);
+		assertSame(b2, Service.getByid(b2.getId(), listeBean));
+	}
+
+	@Test
+	public void testUpdateBean() {
+		Service.addBean(b2, listeBean);
+		
+		assertTrue(Service.updateBean(b2, listeBean));
 	}
 
 }

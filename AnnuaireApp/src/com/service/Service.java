@@ -4,14 +4,11 @@ import java.util.Set;
 
 import com.bean.IBean;
 
-// TODO: Auto-generated Javadoc
 /**
  * The Class Service.
  */
 public class Service {
 
-	
-	
 	/**
 	 * Adds the bean.
 	 *
@@ -58,13 +55,9 @@ public class Service {
 	 * @return true, if successful
 	 */
 	public static boolean updateBean(IBean bean, Set<IBean> listeBean) {
-		for (IBean iBean : listeBean) {
-			if (iBean.getId() == bean.getId()) {
-				listeBean.remove(iBean);
-				return listeBean.add(bean);
-			}
-		}
-		return false;
+		IBean update = Service.getByid(bean.getId(), listeBean);
+		deleteBean(update, listeBean);
+		return addBean(bean, listeBean);
 	}
 
 }
