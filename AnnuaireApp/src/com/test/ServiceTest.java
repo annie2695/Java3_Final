@@ -13,7 +13,7 @@ import org.junit.Test;
 import com.bean.IBean;
 import com.bean.compte.Admin;
 import com.bean.compte.User;
-import com.service.Service;
+import com.service.ServiceCRUD;
 
 public class ServiceTest {
 	
@@ -36,27 +36,27 @@ public class ServiceTest {
 
 	@Ignore
 	public void testAddBean() {
-		assertTrue(Service.addBean(b1, listeBean));
+		assertTrue(ServiceCRUD.addBean(b1, listeBean));
 	}
 
 	@Ignore
 	public void testDeleteBean() {
-		Service.addBean(b2, listeBean);
-		assertTrue(Service.deleteBean(b2, listeBean));
+		ServiceCRUD.addBean(b2, listeBean);
+		assertTrue(ServiceCRUD.deleteBean(b2, listeBean));
 	}
 
 	@Ignore
 	public void testGetByid() {
-		Service.addBean(b1, listeBean);
-		Service.addBean(b2, listeBean);
-		assertSame(b2, Service.getByid(b2.getId(), listeBean));
+		ServiceCRUD.addBean(b1, listeBean);
+		ServiceCRUD.addBean(b2, listeBean);
+		assertSame(b2, ServiceCRUD.getByid(b2.getId(), listeBean));
 	}
 
 	@Test
 	public void testUpdateBean() {
-		Service.addBean(b2, listeBean);
+		ServiceCRUD.addBean(b2, listeBean);
 		
-		assertTrue(Service.updateBean(b2, listeBean));
+		assertTrue(ServiceCRUD.updateBean(b2, listeBean));
 	}
 
 }

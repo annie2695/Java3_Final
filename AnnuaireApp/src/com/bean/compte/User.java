@@ -17,7 +17,7 @@ public class User extends Client {
 	}
 
 	/**
-	 * M�thode d'acc�s au carnet d'adresse.
+	 * Methode d'acces au carnet d'adresse.
 	 * @return Le carnet d'adresse
 	 */
 	public AddressBook getAddressBook() {

@@ -10,4 +10,18 @@ public class Admin extends Client {
 		this.credentials = new Credentials(PREFIXE + username, password);
 	}
 
+	/**
+	 * @return the credentials
+	 */
+	public Credentials getCredentials() {
+		return credentials;
+	}
+
+	/**
+	 * @param credentials the credentials to set
+	 */
+	public void setCredentials(Credentials credentials) {
+		this.credentials = credentials;
+	}
+
 }
