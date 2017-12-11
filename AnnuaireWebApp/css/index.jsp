@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<link rel="stylesheet" href="../../../css/stylesheet.css" type="text/css">
+<link rel="stylesheet" href="<%request.getContextPath() %>" type="text/css">
 <title>Insert title here</title>
 </head>
 <body>
@@ -27,7 +27,7 @@
   </div>
   
   <textarea rows="" cols=""><% 
-       out.write(new File("index.jsp").getCanonicalPath());
+       out.write(new File(".").getCanonicalPath());
     %></textarea>
 
   <div class="container" style="background-color:#f1f1f1">

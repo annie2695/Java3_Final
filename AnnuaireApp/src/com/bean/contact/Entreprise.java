@@ -19,6 +19,7 @@ public class Entreprise extends Contact {
 	public Entreprise(String numeroCivique, String rue, String ville, String codePostal, String province) {
 		super();
 		this.address = new Address(numeroCivique, rue, ville, codePostal, province);
+		this.address.setContact(this);
 		
 	}
 

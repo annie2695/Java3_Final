@@ -3,6 +3,7 @@ package com.service;
 import java.util.Set;
 
 import com.bean.IBean;
+import com.bean.compte.User;
 
 /**
  * The Class Service.
@@ -59,5 +60,5 @@ public class ServiceCRUD {
 		deleteBean(update, listeBean);
 		return addBean(bean, listeBean);
 	}
-
+	
 }
