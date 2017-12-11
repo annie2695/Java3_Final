@@ -34,7 +34,7 @@ public class ServiceTest {
 		listeBean = null;
 	}
 
-	@Ignore
+	@Test
 	public void testAddBean() {
 		assertTrue(ServiceCRUD.addBean(b1, listeBean));
 	}

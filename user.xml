@@ -1,0 +1,44 @@
+<Liste>
+  <com.bean.compte.User>
+    <id>2</id>
+    <addressBook>
+      <id>2</id>
+      <favoris class="sorted-set"/>
+      <listeContacts class="sorted-set"/>
+      <user reference="../.."/>
+    </addressBook>
+    <credentials>
+      <id>0</id>
+      <username>uGoerge</username>
+      <pwd>kiki</pwd>
+    </credentials>
+  </com.bean.compte.User>
+  <com.bean.compte.User>
+    <id>3</id>
+    <addressBook>
+      <id>3</id>
+      <favoris class="sorted-set"/>
+      <listeContacts class="sorted-set"/>
+      <user reference="../.."/>
+    </addressBook>
+    <credentials>
+      <id>0</id>
+      <username>ukoko</username>
+      <pwd>kiki</pwd>
+    </credentials>
+  </com.bean.compte.User>
+  <com.bean.compte.User>
+    <id>1</id>
+    <addressBook>
+      <id>1</id>
+      <favoris class="sorted-set"/>
+      <listeContacts class="sorted-set"/>
+      <user reference="../.."/>
+    </addressBook>
+    <credentials>
+      <id>0</id>
+      <username>uPatate</username>
+      <pwd>102341</pwd>
+    </credentials>
+  </com.bean.compte.User>
+</Liste>
