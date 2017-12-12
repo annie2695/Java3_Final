@@ -17,6 +17,8 @@ public class Address implements IBean{
 	private String province;
 	private Contact contact;
 	
+	private static int compteur = 1;
+	
 	private int id;
 	
 	/**
@@ -30,6 +32,7 @@ public class Address implements IBean{
 	 */
 	public Address(String numeroCivique, String rue, String ville, String codePostal, String province) {
 		super();
+		this.id = compteur++;
 		this.numeroCivique = numeroCivique;
 		this.rue = rue;
 		this.ville = ville;

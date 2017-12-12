@@ -14,7 +14,7 @@ public class Particulier extends Contact {
 	public Particulier(String numeroCivique, String rue, String ville, String codePostal, String province) {
 		super();
 		this.address = new Address(numeroCivique, rue, ville, codePostal, province);
-		
+		this.address.setContact(this);
 	}
 
 	/**

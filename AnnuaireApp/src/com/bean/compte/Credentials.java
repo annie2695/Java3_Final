@@ -13,6 +13,8 @@ public class Credentials {
 	private int id;
 	private String username, pwd;
 	
+	private static int compteur = 1;
+	
 	private Map<String, String> secretsQuestions;
 	
 	/**
@@ -21,6 +23,7 @@ public class Credentials {
 	 * @param pwd Le mot de passe
 	 */
 	public Credentials(String username, String pwd) {
+		this.id = compteur++;
 		this.username = username;
 		this.pwd = pwd;
 	}
