@@ -153,8 +153,7 @@ public class Address implements IBean{
 	 */
 	@Override
 	public String toString() {
-		return "Adresse [numeroCivique=" + numeroCivique + ", rue=" + rue + ", ville=" + ville + ", codePostal="
-				+ codePostal + "]";
+		return numeroCivique+" "+rue+", "+ville+", "+province+", "+codePostal;
 	}
 
 	@Override

@@ -15,12 +15,17 @@ public class Annuaire {
 	private Set<IBean> listeAdmin;
 	private Set<IBean> listeEntreprise;
 	private Set<IBean> listeParticulier;
-	private static final String path = "H:/Programmation/git/Java3_Final/user.xml";
+	//private static final String path = "H:/Programmation/git/Java3_Final/user.xml";
+	private static final String PATH_PARTICULIER = "C:/java3/tpFinal_max_annie/sauvegarde/particulier.xml";
+	private static final String PATH_ENTREPRISE = "C:/java3/tpFinal_max_annie/sauvegarde/entreprise.xml";
+
 	/**
 	 * Constructuer privée pour le singleton.
 	 */
 	private Annuaire() {
-		this.listeUser = ServiceDAO.loadFromXml(path);
+		//this.listeUser = ServiceDAO.loadFromXml(path);
+		this.listeParticulier = ServiceDAO.loadFromXml(PATH_PARTICULIER);
+		this.listeEntreprise = ServiceDAO.loadFromXml(PATH_ENTREPRISE);
 	}
 	
 

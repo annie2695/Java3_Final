@@ -53,8 +53,6 @@ public class ServiceDAOTest {
 		listeBean.add(b4);listeBean.add(b5);listeBean.add(b6);
 		
 		path = "C:/java3/tpFinal_max_annie/sauvegarde/Annuaire.xml";
-		//path = "C:/java3/tpFinal_max_annie/sauvegarde/Test01.xml";
-		path = "H:/Programmation/git/Java3_Final/user.xml";
 	}
 
 	@After
