@@ -1,0 +1,50 @@
+<Liste>
+	<com.bean.contact.Particulier>
+    <id>9</id>
+    <address>
+      <numeroCivique>789</numeroCivique>
+      <rue>tataStreet</rue>
+      <ville>tataCity</ville>
+      <codePostal>TAT ATA</codePostal>
+      <province>TATA Village</province>
+      <contact class="com.bean.contact.Particulier" reference="../.."/>
+      <id>0</id>
+    </address>
+    <courriel>tata@gmail.com</courriel>
+    <telephone>(450)634-7070</telephone>
+    <nom>Tata</nom>
+    <prenom>Tata</prenom>
+  </com.bean.contact.Particulier>
+  <com.bean.contact.Particulier>
+    <id>8</id>
+    <address>
+      <numeroCivique>456</numeroCivique>
+      <rue>totoStreet</rue>
+      <ville>totoCity</ville>
+      <codePostal>TOT OTO</codePostal>
+      <province>TOTO Village</province>
+      <contact class="com.bean.contact.Particulier" reference="../.."/>
+      <id>0</id>
+    </address>
+    <courriel>toto@gmail.com</courriel>
+    <telephone>(514)639-4242</telephone>
+    <nom>Toto</nom>
+    <prenom>Toto</prenom>
+  </com.bean.contact.Particulier>
+  <com.bean.contact.Particulier>
+    <id>11</id>
+    <address>
+      <numeroCivique>951</numeroCivique>
+      <rue>titiStreet</rue>
+      <ville>titiCity</ville>
+      <codePostal>TIT ITI</codePostal>
+      <province>TITI Village</province>
+      <contact class="com.bean.contact.Particulier" reference="../.."/>
+      <id>0</id>
+    </address>
+    <courriel>titi@gmail.com</courriel>
+    <telephone>(514)894-1234</telephone>
+    <nom>Titi</nom>
+    <prenom>Titi</prenom>
+  </com.bean.contact.Particulier>
+</Liste>
