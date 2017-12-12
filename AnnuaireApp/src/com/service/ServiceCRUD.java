@@ -3,7 +3,6 @@ package com.service;
 import java.util.Set;
 
 import com.bean.IBean;
-import com.bean.compte.User;
 
 /**
  * The Class Service.

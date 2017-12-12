@@ -7,18 +7,8 @@ import com.bean.compte.Admin;
 import com.bean.compte.User;
 
 public class ServiceAuthentification {
-
-	public static boolean validateUser(String username, String password, Set<IBean> listeUser){
-		for (IBean user : listeUser) {
-			System.out.println(((User) user).getCredentials().getUsername());
-			if (((User) user).getCredentials().getUsername().equalsIgnoreCase("u"+username) && ((User) user).getCredentials().getPwd().equals(password)) {
-				return true;
-			}
-		}
-		return false;
-	}
 	
-	public static int validateUser1(String username, String password, Set<IBean> listeUser){
+	public static int validateUser(String username, String password, Set<IBean> listeUser){
 		for (IBean user : listeUser) {
 			if (((User) user).getCredentials().getUsername().equalsIgnoreCase("u"+username) && ((User) user).getCredentials().getPwd().equals(password)) {
 				return user.getId();

@@ -1,6 +1,6 @@
 package com.bean.compte;
 
-public class Admin extends Client {
+public class Admin extends Compte {
 	
 	private static final String PREFIXE = "a";
 	

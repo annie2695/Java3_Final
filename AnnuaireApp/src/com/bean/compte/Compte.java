@@ -9,7 +9,7 @@ import com.bean.IBean;
  * 	<i>Admin</i> (personne qui gère le système) ou <i>User</i>
  * 	(personne qui consulte le système).
  */
-public abstract class Client implements IBean {
+public abstract class Compte implements IBean {
 	
 	protected static int compteur = 1;
 	protected int id;
@@ -20,7 +20,7 @@ public abstract class Client implements IBean {
 	/**
 	 * Constructeur de la classe.
 	 */
-	public Client() {
+	public Compte() {
 		this.id = compteur++;
 	}
 

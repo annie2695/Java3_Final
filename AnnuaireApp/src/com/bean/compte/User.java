@@ -2,7 +2,7 @@ package com.bean.compte;
 
 import com.bean.addressbook.AddressBook;
 
-public class User extends Client {
+public class User extends Compte {
 	
 	private static final String PREFIXE = "u";
 	private AddressBook addressBook;

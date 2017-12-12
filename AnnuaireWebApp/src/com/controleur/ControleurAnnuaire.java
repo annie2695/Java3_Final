@@ -11,7 +11,6 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.bean.IBean;
 import com.bean.annuaire.Annuaire;
-import com.bean.compte.Client;
 import com.bean.compte.User;
 import com.service.ServiceAuthentification;
 import com.service.ServiceCRUD;
@@ -64,7 +63,7 @@ public class ControleurAnnuaire extends HttpServlet {
 		}
 		if(action.equalsIgnoreCase("authentification")){
 			
-			int idUserTrouver = ServiceAuthentification.validateUser1(request.getParameter("username"), 
+			int idUserTrouver = ServiceAuthentification.validateUser(request.getParameter("username"), 
 					request.getParameter("pwd"), annuaire.getListeUser());
 			if(idUserTrouver != -1){
 				IBean user = ServiceCRUD.getByid(idUserTrouver, annuaire.getListeUser());

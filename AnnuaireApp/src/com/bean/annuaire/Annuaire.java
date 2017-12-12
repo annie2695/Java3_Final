@@ -51,5 +51,53 @@ public class Annuaire {
 	public void setListeUser(Set<IBean> listeUser) {
 		this.listeUser = listeUser;
 	}
+
+
+	/**
+	 * @return the listeAdmin
+	 */
+	public Set<IBean> getListeAdmin() {
+		return listeAdmin;
+	}
+
+
+	/**
+	 * @param listeAdmin the listeAdmin to set
+	 */
+	public void setListeAdmin(Set<IBean> listeAdmin) {
+		this.listeAdmin = listeAdmin;
+	}
+
+
+	/**
+	 * @return the listeEntreprise
+	 */
+	public Set<IBean> getListeEntreprise() {
+		return listeEntreprise;
+	}
+
+
+	/**
+	 * @param listeEntreprise the listeEntreprise to set
+	 */
+	public void setListeEntreprise(Set<IBean> listeEntreprise) {
+		this.listeEntreprise = listeEntreprise;
+	}
+
+
+	/**
+	 * @return the listeParticulier
+	 */
+	public Set<IBean> getListeParticulier() {
+		return listeParticulier;
+	}
+
+
+	/**
+	 * @param listeParticulier the listeParticulier to set
+	 */
+	public void setListeParticulier(Set<IBean> listeParticulier) {
+		this.listeParticulier = listeParticulier;
+	}
 	
 }
