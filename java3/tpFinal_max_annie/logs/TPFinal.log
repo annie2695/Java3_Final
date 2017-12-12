@@ -1,0 +1,22 @@
+2017-12-11 15:28:09,340 ERROR   com.service.ServiceDAO - H:\Programmation\git\Java3_Final\user.xml (Le chemin d’accès spécifié est introuvable)
+2017-12-11 16:13:00,248 ERROR   com.service.ServiceDAO - C:\java3\tpFinal_max_annie\sauvegarde\Test01.xml (Le fichier spécifié est introuvable)
+2017-12-11 18:11:24,542 ERROR   com.service.ServiceDAO - 
+---- Debugging information ----
+cause-exception     : java.lang.NumberFormatException
+cause-message       : Zero length string
+class               : java.lang.Integer
+required-type       : java.lang.Integer
+converter-type      : com.thoughtworks.xstream.converters.SingleValueConverterWrapper
+wrapped-converter   : com.thoughtworks.xstream.converters.basic.IntConverter
+path                : /Liste/com.bean.contact.Entreprise[5]/address/id
+class[1]            : com.bean.contact.Address
+converter-type[1]   : com.thoughtworks.xstream.converters.reflection.ReflectionConverter
+class[2]            : com.bean.contact.Entreprise
+class[3]            : java.util.HashSet
+converter-type[2]   : com.thoughtworks.xstream.converters.collections.CollectionConverter
+version             : 1.4.10
+-------------------------------
+2017-12-12 10:31:27,358 ERROR   com.service.ServiceDAO - C:\java3\tpFinal_max_annie\sauvegarde\Contact\Test01.xml (Le chemin d’accès spécifié est introuvable)
+2017-12-12 10:31:27,380 ERROR   com.service.ServiceDAO - Erreur d'écriture
+2017-12-12 12:02:39,458 ERROR   com.service.ServiceDAO - H:\Programmation\git\Java3_Final\user.xml (Le chemin d’accès spécifié est introuvable)
+2017-12-12 15:28:19,546 ERROR   com.service.ServicePDF - C:\java3\tpFinal_max_annie\pdf\1.pdf (Le processus ne peut pas accéder au fichier car ce fichier est utilisé par un autre processus)

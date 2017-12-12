@@ -18,7 +18,8 @@ public class AddressBook implements IBean {
 	private int id;
 	
 	private Set<Contact> favoris;
-	private Set<Contact> listeContacts;
+	private Set<Contact> listeParticuliers;
+	private Set<Contact> listeEntreprises;
 	
 	private User user;
 	
@@ -30,7 +31,8 @@ public class AddressBook implements IBean {
 		compteur++;
 		
 		favoris = new TreeSet<Contact>();
-		listeContacts = new TreeSet<Contact>();
+		listeParticuliers = new TreeSet<Contact>();
+		listeEntreprises = new TreeSet<Contact>();
 	}
 
 	/**
@@ -47,14 +49,6 @@ public class AddressBook implements IBean {
 	 */
 	public Set<Contact> getFavoris() {
 		return favoris;
-	}
-
-	/**
-	 * Méthode d'accès à la liste des contacts
-	 * @return La liste des contacts
-	 */
-	public Set<Contact> getListeContacts() {
-		return listeContacts;
 	}
 
 	/**
@@ -75,10 +69,32 @@ public class AddressBook implements IBean {
 		this.user = user;
 	}
 
-	@Override
-	public String toString() {
-		return "AddressBook [id=" + id + ", favoris=" + favoris + ", listeContacts=" + listeContacts + ", user=" + user
-				+ "]";
+	/**
+	 * @return the listeParticuliers
+	 */
+	public Set<Contact> getListeParticuliers() {
+		return listeParticuliers;
+	}
+
+	/**
+	 * @param listeParticuliers the listeParticuliers to set
+	 */
+	public void setListeParticuliers(Set<Contact> listeParticuliers) {
+		this.listeParticuliers = listeParticuliers;
+	}
+
+	/**
+	 * @return the listeEntreprises
+	 */
+	public Set<Contact> getListeEntreprises() {
+		return listeEntreprises;
+	}
+
+	/**
+	 * @param listeEntreprises the listeEntreprises to set
+	 */
+	public void setListeEntreprises(Set<Contact> listeEntreprises) {
+		this.listeEntreprises = listeEntreprises;
 	}
 	
 }
