@@ -16,7 +16,6 @@ public class Annuaire {
 	private Set<IBean> listeEntreprise;
 	private Set<IBean> listeParticulier;
 	private static final String path = "H:/Programmation/git/Java3_Final/user.xml";
-
 	/**
 	 * Constructuer privée pour le singleton.
 	 */

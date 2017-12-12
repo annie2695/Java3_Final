@@ -17,13 +17,13 @@ public class ServiceAuthentification {
 		return -1;
 	}
 	
-	public static boolean validateAdmin(String username, String password, Set<IBean> listeUser){
-		for (IBean user : listeUser) {
-			if (((Admin) user).getCredentials().getUsername().equalsIgnoreCase("a"+username) && ((Admin) user).getCredentials().getPwd().equals(password)) {
-				return true;
+	public static int validateAdmin(String username, String password, Set<IBean> listeUser){
+		for (IBean admin : listeUser) {
+			if (((Admin) admin).getCredentials().getUsername().equalsIgnoreCase("a"+username) && ((Admin) admin).getCredentials().getPwd().equals(password)) {
+				return admin.getId();
 			}
 		}
-		return false;
+		return -1;
 	}
 	
 
