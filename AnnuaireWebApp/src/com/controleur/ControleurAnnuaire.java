@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.bean.IBean;
 import com.bean.annuaire.Annuaire;
 import com.bean.compte.User;
+import com.service.MailService;
 import com.service.ServiceAuthentification;
 import com.service.ServiceCRUD;
 import com.service.ServiceDAO;
@@ -51,8 +52,11 @@ public class ControleurAnnuaire extends HttpServlet {
 			((User) newUser).setNom(request.getParameter("lname"));
 			((User) newUser).setPrenom(request.getParameter("name"));
 			
-			// Fonction pour envoyer un email de confirmation lors de l'inscription du nouveau user dans l'annuaire.
-			
+			if(annuaire.getListeUser().add((User) newUser)) {
+				// traitement pour envoyer un email de confirmation lors de l'inscription du nouveau user dans l'annuaire.
+					MailService mailService = new MailService();
+					mailService.sendMail("test@test.ca", request.getParameter("email"), "Test Mail From TpFinal", "test01");	
+			}
 			
 			annuaire.getListeUser().add((User) newUser);
 			ServiceDAO.saveToXml(annuaire.getListeUser(), path);
