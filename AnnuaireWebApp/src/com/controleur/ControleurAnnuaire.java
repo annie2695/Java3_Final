@@ -25,7 +25,7 @@ public class ControleurAnnuaire extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private static final String PATH_USER = "C:/java3/tpFinal_max_annie/sauvegarde/user.xml";
 	
-	// Repr�sente l'instance unique d'Annuaire(Singleton)
+	// Represente l'instance unique d'Annuaire(Singleton)
 	private Annuaire annuaire;
 	
 	public ControleurAnnuaire() {
@@ -57,7 +57,7 @@ public class ControleurAnnuaire extends HttpServlet {
 					MailService mailService = new MailService();
 					mailService.sendMail("test@test.ca", request.getParameter("email"), "Test Mail From TpFinal", "test01");	
 			}		
-			ServiceDAO.saveToXml(annuaire.getListeUser(), PATH_USERS);
+			ServiceDAO.saveToXml(annuaire.getListeUser(), PATH_USER);
 			
 			//request.setAttribute("newUser", newUser);
 			RequestDispatcher dispatcher = request.getRequestDispatcher("ajouterAnnuaire.jsp");

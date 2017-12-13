@@ -1,10 +1,7 @@
 package com.bean.annuaire;
 
-import java.io.File;
 import java.util.Set;
 import java.util.TreeSet;
-
-import org.apache.commons.io.FileUtils;
 
 import com.bean.IBean;
 import com.service.ServiceDAO;
@@ -24,7 +21,7 @@ public class Annuaire {
 	private static final String PATH_ENTREPRISE = "C:/java3/tpFinal_max_annie/sauvegarde/entreprise.xml";
 
 	/**
-	 * Constructeur priv�e pour le singleton.
+	 * Constructeur prive pour le singleton.
 	 */
 	private Annuaire() {
 		this.listeUser = ServiceDAO.loadFromXml(PATH_USER);
