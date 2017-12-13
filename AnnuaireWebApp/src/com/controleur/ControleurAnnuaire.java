@@ -23,9 +23,9 @@ import com.service.ServiceDAO;
 @WebServlet("/ControleurAnnuaire")
 public class ControleurAnnuaire extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	private static final String PATH_USERS = "C:/java3/tpFinal_max_annie/sauvegarde/user.xml";
+	private static final String PATH_USER = "C:/java3/tpFinal_max_annie/sauvegarde/user.xml";
 	
-	// Représente l'instance unique d'Annuaire(Signleton)
+	// Reprï¿½sente l'instance unique d'Annuaire(Singleton)
 	private Annuaire annuaire;
 	
 	public ControleurAnnuaire() {
