@@ -10,6 +10,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import com.bean.IBean;
+import com.bean.compte.User;
 import com.bean.contact.Entreprise;
 import com.bean.contact.Particulier;
 import com.service.ServiceDAO;
@@ -22,7 +23,7 @@ public class ServiceDAOTest {
 	
 	@Before
 	public void setUp() throws Exception {
-		b1 = new Entreprise("123", "patateDouce", "Friterie", "La-bas", "null part");
+		/*b1 = new Entreprise("123", "patateDouce", "Friterie", "La-bas", "null part");
 		((Entreprise)b1).setNomEntreprise("Potatos 911");
 		((Entreprise)b1).setTelephone("(514)999-0999");
 		((Entreprise)b1).setCourriel("potatos911@gmail.com");
@@ -51,20 +52,23 @@ public class ServiceDAOTest {
 		listeBean = new HashSet<IBean>();
 		listeBean.add(b1);listeBean.add(b2);listeBean.add(b3);
 		listeBean.add(b4);listeBean.add(b5);listeBean.add(b6);
-		
-		path = "C:/java3/tpFinal_max_annie/sauvegarde/Annuaire.xml";
+		*/
+		listeBean = new HashSet<IBean>();
+		path = "C:/java3/tpFinal_max_annie/sauvegarde/user.xml";
 	}
 
 	@After
 	public void tearDown() throws Exception {
-		b1 = null; b2=null; b3=null;
+		/*b1 = null; b2=null; b3=null;
 		b4 = null; b5=null; b6=null;
 		listeBean =null;
-		path = null;
+		path = null;*/
 	}
 
 	@Test
 	public void testSaveToXml() {
+		User user1 = new User("koko", "kiki"); User user2 = new User("keke", "kiki"); User user3 = new User("kaka", "kiki");
+		listeBean.add(user1);listeBean.add(user2);listeBean.add(user3);
 		assertTrue(ServiceDAO.saveToXml(listeBean, path));
 	}
 

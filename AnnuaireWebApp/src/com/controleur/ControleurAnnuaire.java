@@ -23,7 +23,7 @@ import com.service.ServiceDAO;
 @WebServlet("/ControleurAnnuaire")
 public class ControleurAnnuaire extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	private static final String path = "H:/Programmation/git/Java3_Final/user.xml";
+	private static final String PATH_USERS = "C:/java3/tpFinal_max_annie/sauvegarde/user.xml";
 	
 	// Représente l'instance unique d'Annuaire(Signleton)
 	private Annuaire annuaire;
@@ -52,21 +52,18 @@ public class ControleurAnnuaire extends HttpServlet {
 			((User) newUser).setNom(request.getParameter("lname"));
 			((User) newUser).setPrenom(request.getParameter("name"));
 			
-			if(annuaire.getListeUser().add((User) newUser)) {
+			if(ServiceCRUD.addBean(newUser, annuaire.getListeUser())) {
 				// traitement pour envoyer un email de confirmation lors de l'inscription du nouveau user dans l'annuaire.
 					MailService mailService = new MailService();
 					mailService.sendMail("test@test.ca", request.getParameter("email"), "Test Mail From TpFinal", "test01");	
-			}
-			
-			annuaire.getListeUser().add((User) newUser);
-			ServiceDAO.saveToXml(annuaire.getListeUser(), path);
+			}		
+			ServiceDAO.saveToXml(annuaire.getListeUser(), PATH_USERS);
 			
 			//request.setAttribute("newUser", newUser);
 			RequestDispatcher dispatcher = request.getRequestDispatcher("ajouterAnnuaire.jsp");
 			dispatcher.forward(request, response);
 		}
-		if(action.equalsIgnoreCase("authentification")){
-			
+		else if(action.equalsIgnoreCase("authentification")){
 			int idUserTrouver = ServiceAuthentification.validateUser(request.getParameter("username"), 
 					request.getParameter("pwd"), annuaire.getListeUser());
 			if(idUserTrouver != -1){
@@ -75,9 +72,10 @@ public class ControleurAnnuaire extends HttpServlet {
 				RequestDispatcher dispatcher = request.getRequestDispatcher("authentification.jsp");
 				dispatcher.forward(request, response);
 			}
-			
-			
-			
+		}
+		else if(action.equalsIgnoreCase("consulterAnnuaire")){
+			RequestDispatcher dispatcher = request.getRequestDispatcher("annuaire.jsp");
+			dispatcher.forward(request, response);
 		}
 	}	
 

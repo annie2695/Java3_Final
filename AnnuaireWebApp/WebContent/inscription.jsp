@@ -9,7 +9,7 @@
 </head>
 <body>
 
-	<form method="post" action="AnnuaireControleur">
+	<form method="post" action="ControleurAnnuaire?action=inscription">
 		<div class="container">
 			<label><b>Email</b></label> 
 			<input type="text" placeholder="Enter Email" name="email" required>

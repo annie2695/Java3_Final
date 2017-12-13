@@ -52,5 +52,12 @@ private class SMTPAuthenticator extends Authenticator{
 		}
 	}
 
+/*
+public static void main(String[] args) {
+	MailService mail = new MailService();
+	mail.sendMail("test@test.ca", "Blademax838@hotmail.com", "Test Mail From TpFinal", "test01");
+}
+*/	
+
 	
 }

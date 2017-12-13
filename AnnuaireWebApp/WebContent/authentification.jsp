@@ -22,11 +22,17 @@
 	}
 	else{
 		out.println(user.getPrenom());
-	}
-
+	}	
  %>
+ 
 
 </h1>
+
+<form method="post" action="ControleurAnnuaire?action=consulterAnnuaire">
+			  <div class="container" style="background-color:#f1f1f1">
+			     <button type="submit">Consulter Annuaire</button>
+			  </div>
+			</form>
 
 
 </body>

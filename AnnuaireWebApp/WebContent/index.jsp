@@ -9,7 +9,7 @@
 </head>
 <body>
 
-<form method="post" action="ControleurAnnuaire?action=authentification"">
+<form method="post" action="ControleurAnnuaire?action=authentification">
   <div class="imgcontainer">
     <img src="img_avatar2.png" alt="Avatar" class="avatar">
   </div>

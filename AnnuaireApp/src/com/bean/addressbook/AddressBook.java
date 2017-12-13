@@ -27,9 +27,7 @@ public class AddressBook implements IBean {
 	 * Constructeur de la classe.
 	 */
 	public AddressBook() {
-		this.id = compteur;
-		compteur++;
-		
+		this.id = compteur++;		
 		favoris = new TreeSet<Contact>();
 		listeParticuliers = new TreeSet<Contact>();
 		listeEntreprises = new TreeSet<Contact>();

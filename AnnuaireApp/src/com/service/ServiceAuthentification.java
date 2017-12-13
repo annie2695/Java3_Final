@@ -26,6 +26,10 @@ public class ServiceAuthentification {
 		return false;
 	}
 	
+	public static boolean validerMotDePasse(String pwd1, String pwd2){
+		return (pwd1.equals(pwd2));
+	}
+	
 
 	
 }
