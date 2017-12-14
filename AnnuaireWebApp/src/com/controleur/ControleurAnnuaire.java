@@ -20,6 +20,7 @@ import com.service.MailService;
 import com.service.ServiceAuthentification;
 import com.service.ServiceCRUD;
 import com.service.ServiceDAO;
+import com.service.ServicePDF;
 
 /**
  * Servlet implementation class ControleurAnnuaire
@@ -101,6 +102,7 @@ public class ControleurAnnuaire extends HttpServlet {
 			IBean contact = ServiceCRUD.getByid(Integer.parseInt(request.getParameter("contact")), 
 					((User)user).getAddressBook().getListeParticuliers());
 			ServiceCRUD.deleteBean(contact, ((User)user).getAddressBook().getListeParticuliers());
+			ServiceDAO.saveToXml(annuaire.getListeUser(), PATH_USER);
 			request.setAttribute("user", user);
 			RequestDispatcher dispatcher = request.getRequestDispatcher("accueilUser.jsp");
 			dispatcher.forward(request, response);
@@ -112,6 +114,7 @@ public class ControleurAnnuaire extends HttpServlet {
 			IBean contact = ServiceCRUD.getByid(Integer.parseInt(request.getParameter("contact")), annuaire.getListeParticulier());
 			ServiceCRUD.addBean(contact, ((User)user).getAddressBook().getFavoris());
 			ServiceCRUD.deleteBean(contact, ((User)user).getAddressBook().getListeParticuliers());
+			ServiceDAO.saveToXml(annuaire.getListeUser(), PATH_USER);
 			request.setAttribute("user", user);
 			RequestDispatcher dispatcher = request.getRequestDispatcher("accueilUser.jsp");
 			dispatcher.forward(request, response);
@@ -121,6 +124,7 @@ public class ControleurAnnuaire extends HttpServlet {
 			IBean contact = ServiceCRUD.getByid(Integer.parseInt(request.getParameter("contact")), 
 					((User)user).getAddressBook().getListeEntreprises());
 			ServiceCRUD.deleteBean(contact, ((User)user).getAddressBook().getListeEntreprises());
+			ServiceDAO.saveToXml(annuaire.getListeUser(), PATH_USER);
 			request.setAttribute("user", user);
 			RequestDispatcher dispatcher = request.getRequestDispatcher("accueilUser.jsp");
 			dispatcher.forward(request, response);
@@ -130,6 +134,7 @@ public class ControleurAnnuaire extends HttpServlet {
 			IBean contact = ServiceCRUD.getByid(Integer.parseInt(request.getParameter("contact")), annuaire.getListeParticulier());
 			ServiceCRUD.deleteBean(contact, ((User)user).getAddressBook().getFavoris());
 			ServiceCRUD.addBean(contact, ((User)user).getAddressBook().getListeParticuliers());
+			ServiceDAO.saveToXml(annuaire.getListeUser(), PATH_USER);
 			request.setAttribute("user", user);
 			RequestDispatcher dispatcher = request.getRequestDispatcher("accueilUser.jsp");
 			dispatcher.forward(request, response);
@@ -140,6 +145,7 @@ public class ControleurAnnuaire extends HttpServlet {
 			IBean contact = ServiceCRUD.getByid(Integer.parseInt(request.getParameter("contact")), annuaire.getListeEntreprise());
 			ServiceCRUD.deleteBean(contact, ((User)user).getAddressBook().getFavoris());
 			ServiceCRUD.addBean(contact, ((User)user).getAddressBook().getListeEntreprises());
+			ServiceDAO.saveToXml(annuaire.getListeUser(), PATH_USER);
 			request.setAttribute("user", user);
 			RequestDispatcher dispatcher = request.getRequestDispatcher("accueilUser.jsp");
 			dispatcher.forward(request, response);
@@ -150,6 +156,7 @@ public class ControleurAnnuaire extends HttpServlet {
 					((User)user).getAddressBook().getListeEntreprises());
 			ServiceCRUD.addBean(contact, ((User)user).getAddressBook().getFavoris());
 			ServiceCRUD.deleteBean(contact, ((User)user).getAddressBook().getListeEntreprises());
+			ServiceDAO.saveToXml(annuaire.getListeUser(), PATH_USER);
 			request.setAttribute("user", user);
 			RequestDispatcher dispatcher = request.getRequestDispatcher("accueilUser.jsp");
 			dispatcher.forward(request, response);
@@ -158,6 +165,7 @@ public class ControleurAnnuaire extends HttpServlet {
 			IBean contact = ServiceCRUD.getByid(Integer.parseInt(request.getParameter("contact")), annuaire.getListeParticulier());
 			IBean user = ServiceCRUD.getByid(Integer.parseInt(request.getParameter("user")), annuaire.getListeUser());
 			ServiceCRUD.addBean(contact, ((User) user).getAddressBook().getListeParticuliers());
+			ServiceDAO.saveToXml(annuaire.getListeUser(), PATH_USER);
 			request.setAttribute("user", user);
 			RequestDispatcher dispatcher = request.getRequestDispatcher("accueilUser.jsp");
 			dispatcher.forward(request, response);
@@ -166,6 +174,7 @@ public class ControleurAnnuaire extends HttpServlet {
 			IBean contact = ServiceCRUD.getByid(Integer.parseInt(request.getParameter("contact")), annuaire.getListeEntreprise());
 			IBean user = ServiceCRUD.getByid(Integer.parseInt(request.getParameter("user")), annuaire.getListeUser());
 			ServiceCRUD.addBean(contact, ((User) user).getAddressBook().getListeEntreprises());
+			ServiceDAO.saveToXml(annuaire.getListeUser(), PATH_USER);
 			request.setAttribute("user", user);
 			RequestDispatcher dispatcher = request.getRequestDispatcher("accueilUser.jsp");
 			dispatcher.forward(request, response);
@@ -210,6 +219,13 @@ public class ControleurAnnuaire extends HttpServlet {
 			ServiceDAO.saveToXml(annuaire.getListeEntreprise(), PATH_ENTREPRISE);
 			request.setAttribute("admin", ServiceCRUD.getByid(Integer.parseInt(request.getParameter("admin")), annuaire.getListeAdmin()));
 			RequestDispatcher dispatcher = request.getRequestDispatcher("accueilAdmin.jsp");
+			dispatcher.forward(request, response);
+		}
+		else if (action.equalsIgnoreCase("generePDF")) {
+			user = ServiceCRUD.getByid(Integer.parseInt(request.getParameter("user")), annuaire.getListeUser());
+			ServicePDF.generePDF((User) user);
+			request.setAttribute("user", user);
+			RequestDispatcher dispatcher = request.getRequestDispatcher("accueilUser.jsp");
 			dispatcher.forward(request, response);
 		}
 	}	

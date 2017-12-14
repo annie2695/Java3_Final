@@ -35,11 +35,15 @@
 
 </h1>
 
-<form method="post" action="ControleurAnnuaire?action=consulterAnnuaire">
-  <div class="container" style="background-color:#f1f1f1">
+<div class="container" style="background-color:#f1f1f1">
+<form method="post" action="ControleurAnnuaire?action=consulterAnnuaire" style="float:left;">
      <button type="submit">Consulter Annuaire</button>
-  </div>
 </form>
+<form method="post" action="ControleurAnnuaire?action=generePDF">
+	<input type="hidden" name="user" value="<%= user.getId()%>">
+    <button type="submit">Generer mon carnet</button>
+</form>
+</div>
 
 <div class="container">
 	<h1>Favoris</h1>
@@ -93,6 +97,7 @@
 <div class="container">
 	<h1>Contacts</h1>
 	
+	<h4>Particuliers</h4>
 	<table class="table table-striped">
 		<thead>
 			<tr>
@@ -131,6 +136,22 @@
 	<%
 		}
 	%>
+		</tbody>
+	</table>
+	
+	<h4>Entreprises</h4>
+	<table class="table table-striped">
+		<thead>
+			<tr>
+				<th>Nom</th>
+				<th>Téléphone</th>
+				<th>Courriel</th>
+				<th>Adresse</th>
+				<th></th>
+				<th></th>
+			</tr>
+		</thead>
+		<tbody>
 	
 	<%
 		for(IBean c : user.getAddressBook().getListeEntreprises()){

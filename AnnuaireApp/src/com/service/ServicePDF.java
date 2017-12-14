@@ -7,6 +7,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import com.bean.IBean;
+import com.bean.annuaire.Annuaire;
 import com.bean.compte.User;
 import com.bean.contact.Entreprise;
 import com.bean.contact.Particulier;
@@ -16,12 +17,17 @@ import com.itextpdf.text.Element;
 import com.itextpdf.text.Font;
 import com.itextpdf.text.Image;
 import com.itextpdf.text.Paragraph;
+import com.itextpdf.text.pdf.Barcode;
+import com.itextpdf.text.pdf.BarcodeEAN;
+import com.itextpdf.text.pdf.PdfContentByte;
 import com.itextpdf.text.pdf.PdfPCell;
 import com.itextpdf.text.pdf.PdfPTable;
 import com.itextpdf.text.pdf.PdfWriter;
 
 public class ServicePDF {
 	private static Logger logger = LogManager.getLogger(ServicePDF.class);
+	
+	private static final String PATH_PDF = "C:/java3/tpFinal_max_annie/pdf/";
 
 	private static PdfPCell celluleSansBordure(String contenu) {
 		PdfPCell cellule = new PdfPCell();
@@ -58,13 +64,33 @@ public class ServicePDF {
 		return entete;
 	}
 	
+	private static Image genereCodeBar(User u, PdfWriter writer, PdfPTable tab) {
+		PdfContentByte cByte = writer.getDirectContent();
+		
+		BarcodeEAN bar = new BarcodeEAN();
+		bar.setCodeType(Barcode.EAN13);
+		bar.setCode(Long.toString(System.currentTimeMillis())+u.getId());
+		Image barCode = bar.createImageWithBarcode(cByte, null, null);
+		
+		PdfPCell cell = new PdfPCell(barCode, false);
+		cell.setPaddingTop(10);
+		cell.setHorizontalAlignment(Element.ALIGN_LEFT);
+		cell.setColspan(2);
+		cell.setBorder(0);
+		tab.addCell(cell);
+	
+		return barCode;
+	}
+	
 	private static PdfPTable genereTableauContact(Set<IBean> contacts) {
 		PdfPTable tab = new PdfPTable(4);
 		
 		tab.addCell("Nom");
-		tab.addCell("Tï¿½lï¿½phone");
+		tab.addCell("Téléphone");
 		tab.addCell("Courriel");
 		tab.addCell("Adresse");
+		
+		System.out.println(contacts);
 		
 		for (IBean c : contacts) {
 			if (c instanceof Particulier) {
@@ -77,29 +103,31 @@ public class ServicePDF {
 			tab.addCell(((Contact)c).getCourriel());
 			tab.addCell(((Contact)c).getAddress().toString());
 		}
-		return null;
+		return tab;
 	}
 	
-	public static void generePDF(User u, String filename) {
+	public static void generePDF(User u) {
 		Document doc = new Document();
 		
 		try {
-			PdfWriter writer = PdfWriter.getInstance(doc, new FileOutputStream(filename));
+			PdfWriter writer = PdfWriter.getInstance(doc, new FileOutputStream(PATH_PDF+u.getCredentials().getUsername()+".pdf"));
 			doc.open();
 			
-			doc.add(genereEntete(u));
+			PdfPTable entete = genereEntete(u);
+			entete.addCell(genereCodeBar(u, writer, entete));
+			
+			doc.add(entete);
+			doc.add(new Paragraph("Favoris"));
 			doc.add(genereTableauContact(u.getAddressBook().getFavoris()));
+			doc.add(new Paragraph("Particuliers"));
+			doc.add(genereTableauContact(u.getAddressBook().getListeParticuliers()));
+			doc.add(new Paragraph("Entreprises"));
+			doc.add(genereTableauContact(u.getAddressBook().getListeEntreprises()));
 			
 			doc.close();
 		} catch (Exception e) {
 			logger.error(e.getMessage());
 		}
 	}
-	
-	public static void main(String[] args) {
-		User u = new User("TOTO", "ytrewq");
-		u.setEmail("toto@gmail.com");
-		
-		generePDF(u, "C:/java3/tpFinal_max_annie/pdf/"+u.getId()+".pdf");
-	}
+
 }

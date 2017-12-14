@@ -1,5 +1,20 @@
 <Liste>
   <com.bean.compte.User>
+    <id>2</id>
+    <addressBook>
+      <id>2</id>
+      <favoris class="sorted-set"/>
+      <listeParticuliers class="sorted-set"/>
+      <listeEntreprises class="sorted-set"/>
+      <user reference="../.."/>
+    </addressBook>
+    <credentials>
+      <id>2</id>
+      <username>ukeke</username>
+      <pwd>kiki</pwd>
+    </credentials>
+  </com.bean.compte.User>
+  <com.bean.compte.User>
     <id>3</id>
     <addressBook>
       <id>3</id>
@@ -18,29 +33,81 @@
     <id>1</id>
     <addressBook>
       <id>1</id>
-      <favoris class="sorted-set"/>
-      <listeParticuliers class="sorted-set"/>
-      <listeEntreprises class="sorted-set"/>
+      <favoris class="sorted-set">
+        <com.bean.contact.Particulier>
+          <id>1</id>
+          <address>
+            <numeroCivique>666</numeroCivique>
+            <rue>La mort</rue>
+            <ville>L&apos;enfer</ville>
+            <codePostal>666 666</codePostal>
+            <province>Sous-Terre</province>
+            <contact class="com.bean.contact.Particulier" reference="../.."/>
+            <id>1</id>
+          </address>
+          <courriel>diable.devil@gmail.com</courriel>
+          <telephone>(514)666-6666</telephone>
+          <nom>Devil</nom>
+          <prenom>Diable</prenom>
+        </com.bean.contact.Particulier>
+        <com.bean.contact.Entreprise>
+          <id>12</id>
+          <address>
+            <numeroCivique>4657</numeroCivique>
+            <rue>GeekStreet</rue>
+            <ville>InfoCity</ville>
+            <codePostal>I0I 0I0</codePostal>
+            <province>null part</province>
+            <contact class="com.bean.contact.Entreprise" reference="../.."/>
+            <id>12</id>
+          </address>
+          <courriel>geek.laptop@gmail.com</courriel>
+          <telephone>(450)654-9494</telephone>
+          <nom>Geek - laptop</nom>
+          <numeroEntreprise>0</numeroEntreprise>
+        </com.bean.contact.Entreprise>
+      </favoris>
+      <listeParticuliers class="sorted-set">
+        <com.bean.contact.Particulier>
+          <id>8</id>
+          <address>
+            <numeroCivique>456</numeroCivique>
+            <rue>totoStreet</rue>
+            <ville>totoCity</ville>
+            <codePostal>TOT OTO</codePostal>
+            <province>TOTO Village</province>
+            <contact class="com.bean.contact.Particulier" reference="../.."/>
+            <id>8</id>
+          </address>
+          <courriel>toto@gmail.com</courriel>
+          <telephone>(514)639-4242</telephone>
+          <nom>Toto</nom>
+          <prenom>Toto</prenom>
+        </com.bean.contact.Particulier>
+      </listeParticuliers>
+      <listeEntreprises class="sorted-set">
+        <com.bean.contact.Entreprise>
+          <id>1</id>
+          <address>
+            <numeroCivique>111</numeroCivique>
+            <rue>Pepperroni Street</rue>
+            <ville>Tomatos Sauce</ville>
+            <codePostal>H8Q 2M3</codePostal>
+            <province>Cheese Paradise</province>
+            <contact class="com.bean.contact.Entreprise" reference="../.."/>
+            <id>1</id>
+          </address>
+          <courriel>pizza@gmail.com</courriel>
+          <telephone>(450)333-0333</telephone>
+          <nom>Pizzzaaaa&apos;s</nom>
+          <numeroEntreprise>79846513</numeroEntreprise>
+        </com.bean.contact.Entreprise>
+      </listeEntreprises>
       <user reference="../.."/>
     </addressBook>
     <credentials>
       <id>1</id>
       <username>ukoko</username>
-      <pwd>kiki</pwd>
-    </credentials>
-  </com.bean.compte.User>
-  <com.bean.compte.User>
-    <id>2</id>
-    <addressBook>
-      <id>2</id>
-      <favoris class="sorted-set"/>
-      <listeParticuliers class="sorted-set"/>
-      <listeEntreprises class="sorted-set"/>
-      <user reference="../.."/>
-    </addressBook>
-    <credentials>
-      <id>2</id>
-      <username>ukeke</username>
       <pwd>kiki</pwd>
     </credentials>
   </com.bean.compte.User>

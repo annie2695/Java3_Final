@@ -161,3 +161,13 @@ converter-type[1]   : com.thoughtworks.xstream.converters.collections.Collection
 version             : 1.4.10
 -------------------------------
 2017-12-14 10:53:01,601 ERROR   com.service.ServiceDAO - C:\java3\tpFinal_max_annie\sauvegarde\admin.xml (Le fichier spécifié est introuvable)
+2017-12-14 16:55:55,623 ERROR   com.service.ServicePDF - java.lang.NullPointerException
+2017-12-14 17:02:13,873 ERROR   com.service.ServicePDF - java.lang.NullPointerException
+2017-12-14 17:04:51,654 ERROR   com.service.ServicePDF - java.lang.NullPointerException
+2017-12-14 17:05:52,648 ERROR   com.service.ServicePDF - java.lang.NullPointerException
+2017-12-14 17:06:28,439 ERROR   com.service.ServicePDF - java.lang.NullPointerException
+2017-12-14 17:08:20,096 ERROR   com.service.ServicePDF - java.lang.NullPointerException
+2017-12-14 17:12:22,246 ERROR   com.service.ServicePDF - java.lang.NullPointerException
+2017-12-14 17:12:54,027 ERROR   com.service.ServicePDF - java.lang.NullPointerException
+2017-12-14 17:16:39,425 ERROR   com.service.ServicePDF - java.lang.NullPointerException
+2017-12-14 17:16:46,758 ERROR   com.service.ServicePDF - java.lang.NullPointerException
