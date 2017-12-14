@@ -65,14 +65,26 @@ public class ControleurAnnuaire extends HttpServlet {
 			dispatcher.forward(request, response);
 		}
 		else if(action.equalsIgnoreCase("authentification")){
-			int idUserTrouver = ServiceAuthentification.validateUser(request.getParameter("username"), 
-					request.getParameter("pwd"), annuaire.getListeUser());
-			if(idUserTrouver != -1){
-				user = ServiceCRUD.getByid(idUserTrouver, annuaire.getListeUser());
-				request.setAttribute("user", user);
-				RequestDispatcher dispatcher = request.getRequestDispatcher("accueilUser.jsp");
-				dispatcher.forward(request, response);
+			if (request.getParameter("username").charAt(0) == 'u') {
+				int idUserTrouver = ServiceAuthentification.validateUser(request.getParameter("username"), 
+						request.getParameter("pwd"), annuaire.getListeUser());
+				if(idUserTrouver != -1){
+					user = ServiceCRUD.getByid(idUserTrouver, annuaire.getListeUser());
+					request.setAttribute("user", user);
+					RequestDispatcher dispatcher = request.getRequestDispatcher("accueilUser.jsp");
+					dispatcher.forward(request, response);
+				}
+			}else if (request.getParameter("username").charAt(0) == 'a') {
+				int idAdminTrouver = ServiceAuthentification.validateAdmin(request.getParameter("username"), 
+						request.getParameter("pwd"), annuaire.getListeAdmin());
+				if(idAdminTrouver != -1){
+					IBean admin = ServiceCRUD.getByid(idAdminTrouver, annuaire.getListeAdmin());
+					request.setAttribute("admin", admin);
+					RequestDispatcher dispatcher = request.getRequestDispatcher("accueilAdmin.jsp");
+					dispatcher.forward(request, response);
+				}
 			}
+			
 		}
 		else if(action.equalsIgnoreCase("consulterAnnuaire")){
 			request.setAttribute("user", user);

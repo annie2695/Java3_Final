@@ -5,9 +5,8 @@ import com.bean.IBean;
 /**
  * La classe 
  */
-public class Particulier extends Contact implements Comparable<IBean> {
-
-	private String nom;
+public class Particulier extends Contact {
+	
 	private String prenom;
 	
 	/**
@@ -17,24 +16,6 @@ public class Particulier extends Contact implements Comparable<IBean> {
 		super();
 		this.address = new Address(numeroCivique, rue, ville, codePostal, province);
 		this.address.setContact(this);
-	}
-
-	/**
-	 * Méthode d'accès à variable nom.
-	 *
-	 * @return le nom
-	 */
-	public String getNom() {
-		return nom;
-	}
-
-	/**
-	 * Méthode pour fixer le nom.
-	 *
-	 * @param nom le nouveau nom
-	 */
-	public void setNom(String nom) {
-		this.nom = nom;
 	}
 
 	/**
@@ -60,19 +41,12 @@ public class Particulier extends Contact implements Comparable<IBean> {
 	 */
 	@Override
 	public String toString() {
-		return "Particulier [id= " + super.id + ", nom=" + nom + ", prenom=" + prenom + "]";
+		return "Particulier [id= " + super.id + ", prenom=" + prenom + "]";
 	}
-
+	
 	@Override
-	public int compareTo(IBean o) {
-		Particulier p1 = (Particulier) o;
-		if(this.nom.equals(p1.nom))
-	    {
-	      return this.prenom.compareTo(p1.prenom);
-	    }
-	   return this.nom.compareTo(p1.nom);
+	public int compareTo(IBean c) {
+		return this.nom.compareTo(((Contact)c).getNom());
 	}
-	
-	
 	
 }

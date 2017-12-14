@@ -20,3 +20,144 @@ version             : 1.4.10
 2017-12-12 10:31:27,380 ERROR   com.service.ServiceDAO - Erreur d'écriture
 2017-12-12 12:02:39,458 ERROR   com.service.ServiceDAO - H:\Programmation\git\Java3_Final\user.xml (Le chemin d’accès spécifié est introuvable)
 2017-12-12 15:28:19,546 ERROR   com.service.ServicePDF - C:\java3\tpFinal_max_annie\pdf\1.pdf (Le processus ne peut pas accéder au fichier car ce fichier est utilisé par un autre processus)
+2017-12-12 16:22:48,343 ERROR   com.service.ServiceDAO - No such field com.bean.addressbook.AddressBook.listeContacts
+---- Debugging information ----
+message             : No such field com.bean.addressbook.AddressBook.listeContacts
+field               : listeContacts
+class               : com.bean.addressbook.AddressBook
+required-type       : com.bean.addressbook.AddressBook
+converter-type      : com.thoughtworks.xstream.converters.reflection.ReflectionConverter
+path                : /Liste/com.bean.compte.User/addressBook/listeContacts
+class[1]            : com.bean.compte.User
+class[2]            : java.util.HashSet
+converter-type[1]   : com.thoughtworks.xstream.converters.collections.CollectionConverter
+version             : 1.4.10
+-------------------------------
+2017-12-13 14:36:29,363 ERROR   com.service.ServiceDAO - No such field com.bean.addressbook.AddressBook.listeContacts
+---- Debugging information ----
+message             : No such field com.bean.addressbook.AddressBook.listeContacts
+field               : listeContacts
+class               : com.bean.addressbook.AddressBook
+required-type       : com.bean.addressbook.AddressBook
+converter-type      : com.thoughtworks.xstream.converters.reflection.ReflectionConverter
+path                : /Liste/com.bean.compte.User/addressBook/listeContacts
+class[1]            : com.bean.compte.User
+class[2]            : java.util.HashSet
+converter-type[1]   : com.thoughtworks.xstream.converters.collections.CollectionConverter
+version             : 1.4.10
+-------------------------------
+2017-12-13 14:39:09,334 ERROR   com.service.ServiceDAO - No such field com.bean.addressbook.AddressBook.listeContacts
+---- Debugging information ----
+message             : No such field com.bean.addressbook.AddressBook.listeContacts
+field               : listeContacts
+class               : com.bean.addressbook.AddressBook
+required-type       : com.bean.addressbook.AddressBook
+converter-type      : com.thoughtworks.xstream.converters.reflection.ReflectionConverter
+path                : /Liste/com.bean.compte.User/addressBook/listeContacts
+class[1]            : com.bean.compte.User
+class[2]            : java.util.HashSet
+converter-type[1]   : com.thoughtworks.xstream.converters.collections.CollectionConverter
+version             : 1.4.10
+-------------------------------
+2017-12-13 14:43:17,574 ERROR   com.service.ServiceDAO - No such field com.bean.addressbook.AddressBook.listeContacts
+---- Debugging information ----
+message             : No such field com.bean.addressbook.AddressBook.listeContacts
+field               : listeContacts
+class               : com.bean.addressbook.AddressBook
+required-type       : com.bean.addressbook.AddressBook
+converter-type      : com.thoughtworks.xstream.converters.reflection.ReflectionConverter
+path                : /Liste/com.bean.compte.User/addressBook/listeContacts
+class[1]            : com.bean.compte.User
+class[2]            : java.util.HashSet
+converter-type[1]   : com.thoughtworks.xstream.converters.collections.CollectionConverter
+version             : 1.4.10
+-------------------------------
+2017-12-13 14:58:11,091 ERROR   com.service.ServiceDAO - C:\java3\tpFinal_max_annie\sauvegarde\user.xml (Le fichier spécifié est introuvable)
+2017-12-13 15:09:26,586 ERROR   com.service.ServiceDAO - 
+2017-12-13 15:18:33,951 ERROR   com.service.ServiceDAO - C:\java3\tpFinal_max_annie\sauvegarde\user.xml (Le fichier spécifié est introuvable)
+2017-12-13 15:20:38,181 ERROR   com.service.ServiceDAO - C:\java3\tpFinal_max_annie\sauvegarde\user.xml (Le fichier spécifié est introuvable)
+2017-12-13 15:21:53,926 ERROR   com.service.ServiceDAO - C:\java3\tpFinal_max_annie\sauvegarde\user.xml (Le fichier spécifié est introuvable)
+2017-12-13 15:24:13,929 ERROR   com.service.ServiceDAO - C:\java3\tpFinal_max_annie\sauvegarde\user.xml (Le fichier spécifié est introuvable)
+2017-12-13 15:28:31,237 ERROR   com.service.ServiceDAO - C:\java3\tpFinal_max_annie\sauvegarde\user.xml (Le fichier spécifié est introuvable)
+2017-12-13 16:18:10,991 ERROR   com.service.ServiceDAO - C:\java3\tpFinal_max_annie\sauvegarde\user.xml (Le fichier spécifié est introuvable)
+2017-12-13 16:20:19,068 ERROR   com.service.ServiceDAO - No such field com.bean.addressbook.AddressBook.listeContacts
+---- Debugging information ----
+message             : No such field com.bean.addressbook.AddressBook.listeContacts
+field               : listeContacts
+class               : com.bean.addressbook.AddressBook
+required-type       : com.bean.addressbook.AddressBook
+converter-type      : com.thoughtworks.xstream.converters.reflection.ReflectionConverter
+path                : /Liste/com.bean.compte.User/addressBook/listeContacts
+class[1]            : com.bean.compte.User
+class[2]            : java.util.HashSet
+converter-type[1]   : com.thoughtworks.xstream.converters.collections.CollectionConverter
+version             : 1.4.10
+-------------------------------
+2017-12-13 16:24:27,033 ERROR   com.service.ServiceDAO - No such field com.bean.addressbook.AddressBook.listeContacts
+---- Debugging information ----
+message             : No such field com.bean.addressbook.AddressBook.listeContacts
+field               : listeContacts
+class               : com.bean.addressbook.AddressBook
+required-type       : com.bean.addressbook.AddressBook
+converter-type      : com.thoughtworks.xstream.converters.reflection.ReflectionConverter
+path                : /Liste/com.bean.compte.User/addressBook/listeContacts
+class[1]            : com.bean.compte.User
+class[2]            : java.util.HashSet
+converter-type[1]   : com.thoughtworks.xstream.converters.collections.CollectionConverter
+version             : 1.4.10
+-------------------------------
+2017-12-13 16:30:38,140 ERROR   com.service.ServiceDAO - No such field com.bean.addressbook.AddressBook.listeContacts
+---- Debugging information ----
+message             : No such field com.bean.addressbook.AddressBook.listeContacts
+field               : listeContacts
+class               : com.bean.addressbook.AddressBook
+required-type       : com.bean.addressbook.AddressBook
+converter-type      : com.thoughtworks.xstream.converters.reflection.ReflectionConverter
+path                : /Liste/com.bean.compte.User/addressBook/listeContacts
+class[1]            : com.bean.compte.User
+class[2]            : java.util.HashSet
+converter-type[1]   : com.thoughtworks.xstream.converters.collections.CollectionConverter
+version             : 1.4.10
+-------------------------------
+2017-12-13 16:32:01,759 ERROR   com.service.ServiceDAO - No such field com.bean.addressbook.AddressBook.listeContacts
+---- Debugging information ----
+message             : No such field com.bean.addressbook.AddressBook.listeContacts
+field               : listeContacts
+class               : com.bean.addressbook.AddressBook
+required-type       : com.bean.addressbook.AddressBook
+converter-type      : com.thoughtworks.xstream.converters.reflection.ReflectionConverter
+path                : /Liste/com.bean.compte.User/addressBook/listeContacts
+class[1]            : com.bean.compte.User
+class[2]            : java.util.HashSet
+converter-type[1]   : com.thoughtworks.xstream.converters.collections.CollectionConverter
+version             : 1.4.10
+-------------------------------
+2017-12-13 16:33:02,999 ERROR   com.service.ServiceDAO - No such field com.bean.addressbook.AddressBook.listeContacts
+---- Debugging information ----
+message             : No such field com.bean.addressbook.AddressBook.listeContacts
+field               : listeContacts
+class               : com.bean.addressbook.AddressBook
+required-type       : com.bean.addressbook.AddressBook
+converter-type      : com.thoughtworks.xstream.converters.reflection.ReflectionConverter
+path                : /Liste/com.bean.compte.User/addressBook/listeContacts
+class[1]            : com.bean.compte.User
+class[2]            : java.util.HashSet
+converter-type[1]   : com.thoughtworks.xstream.converters.collections.CollectionConverter
+version             : 1.4.10
+-------------------------------
+2017-12-13 17:49:18,991 INFO    com.service.MailService - Début de l'envoi de mail
+2017-12-13 17:49:20,350 ERROR   com.service.MailService - Couldn't connect to host, port: localhost, 25; timeout -1
+2017-12-13 18:47:02,819 ERROR   com.service.ServiceDAO - No such field com.bean.addressbook.AddressBook.listeContacts
+---- Debugging information ----
+message             : No such field com.bean.addressbook.AddressBook.listeContacts
+field               : listeContacts
+class               : com.bean.addressbook.AddressBook
+required-type       : com.bean.addressbook.AddressBook
+converter-type      : com.thoughtworks.xstream.converters.reflection.ReflectionConverter
+path                : /Liste/com.bean.compte.User/addressBook/listeContacts
+class[1]            : com.bean.compte.User
+class[2]            : java.util.HashSet
+converter-type[1]   : com.thoughtworks.xstream.converters.collections.CollectionConverter
+version             : 1.4.10
+-------------------------------
+2017-12-14 10:53:01,601 ERROR   com.service.ServiceDAO - C:\java3\tpFinal_max_annie\sauvegarde\admin.xml (Le fichier spécifié est introuvable)

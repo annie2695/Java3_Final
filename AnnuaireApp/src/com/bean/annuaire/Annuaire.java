@@ -16,6 +16,7 @@ public class Annuaire {
 	private Set<IBean> listeAdmin;
 	private Set<IBean> listeEntreprise;
 	private Set<IBean> listeParticulier;
+	private static final String PATH_ADMIN = "C:/java3/tpFinal_max_annie/sauvegarde/admin.xml";
 	private static final String PATH_USER = "C:/java3/tpFinal_max_annie/sauvegarde/user.xml";
 	private static final String PATH_PARTICULIER = "C:/java3/tpFinal_max_annie/sauvegarde/particulier.xml";
 	private static final String PATH_ENTREPRISE = "C:/java3/tpFinal_max_annie/sauvegarde/entreprise.xml";
@@ -24,6 +25,10 @@ public class Annuaire {
 	 * Constructeur prive pour le singleton.
 	 */
 	private Annuaire() {
+		this.listeAdmin = ServiceDAO.loadFromXml(PATH_ADMIN);
+		if(this.listeAdmin == null){
+            this.listeAdmin = new TreeSet<IBean>();
+		}
 		this.listeUser = ServiceDAO.loadFromXml(PATH_USER);
 		if(this.listeUser == null){
             this.listeUser = new TreeSet<IBean>();

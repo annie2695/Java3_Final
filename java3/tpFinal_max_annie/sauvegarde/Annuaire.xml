@@ -1,33 +1,19 @@
 <Liste>
   <com.bean.contact.Entreprise>
-    <id>7</id>
+    <id>10</id>
     <address>
-      <numeroCivique>123</numeroCivique>
-      <rue>patateDouce</rue>
-      <ville>Friterie</ville>
-      <codePostal>La-bas</codePostal>
+      <numeroCivique>7534</numeroCivique>
+      <rue>sleepStreet</rue>
+      <ville>Silence</ville>
+      <codePostal>Z1Z 1Z1</codePostal>
       <province>null part</province>
       <contact class="com.bean.contact.Entreprise" reference="../.."/>
-      <id>0</id>
+      <id>10</id>
     </address>
-    <courriel>potatos911@gmail.com</courriel>
-    <telephone>(514)999-0999</telephone>
-    <nomEntreprise>Potatos 911</nomEntreprise>
-  </com.bean.contact.Entreprise>
-  <com.bean.contact.Entreprise>
-    <id>12</id>
-    <address>
-      <numeroCivique>4657</numeroCivique>
-      <rue>GeekStreet</rue>
-      <ville>InfoCity</ville>
-      <codePostal>I0I 0I0</codePostal>
-      <province>null part</province>
-      <contact class="com.bean.contact.Entreprise" reference="../.."/>
-      <id>0</id>
-    </address>
-    <courriel>geek.laptop@gmail.com</courriel>
-    <telephone>(450)654-9494</telephone>
-    <nomEntreprise>Geek - laptop</nomEntreprise>
+    <courriel>sommeil.city@gmail.com</courriel>
+    <telephone>(514)555-5555</telephone>
+    <nom>Sommeil City</nom>
+    <numeroEntreprise>0</numeroEntreprise>
   </com.bean.contact.Entreprise>
   <com.bean.contact.Particulier>
     <id>9</id>
@@ -38,7 +24,7 @@
       <codePostal>TAT ATA</codePostal>
       <province>TATA Village</province>
       <contact class="com.bean.contact.Particulier" reference="../.."/>
-      <id>0</id>
+      <id>9</id>
     </address>
     <courriel>tata@gmail.com</courriel>
     <telephone>(450)634-7070</telephone>
@@ -46,19 +32,20 @@
     <prenom>Tata</prenom>
   </com.bean.contact.Particulier>
   <com.bean.contact.Entreprise>
-    <id>10</id>
+    <id>7</id>
     <address>
-      <numeroCivique>7534</numeroCivique>
-      <rue>sleepStreet</rue>
-      <ville>Silence</ville>
-      <codePostal>Z1Z 1Z1</codePostal>
+      <numeroCivique>123</numeroCivique>
+      <rue>patateDouce</rue>
+      <ville>Friterie</ville>
+      <codePostal>La-bas</codePostal>
       <province>null part</province>
       <contact class="com.bean.contact.Entreprise" reference="../.."/>
-      <id>0</id>
+      <id>7</id>
     </address>
-    <courriel>sommeil.city@gmail.com</courriel>
-    <telephone>(514)555-5555</telephone>
-    <nomEntreprise>Sommeil City</nomEntreprise>
+    <courriel>potatos911@gmail.com</courriel>
+    <telephone>(514)999-0999</telephone>
+    <nom>Potatos 911</nom>
+    <numeroEntreprise>0</numeroEntreprise>
   </com.bean.contact.Entreprise>
   <com.bean.contact.Particulier>
     <id>8</id>
@@ -69,13 +56,29 @@
       <codePostal>TOT OTO</codePostal>
       <province>TOTO Village</province>
       <contact class="com.bean.contact.Particulier" reference="../.."/>
-      <id>0</id>
+      <id>8</id>
     </address>
     <courriel>toto@gmail.com</courriel>
     <telephone>(514)639-4242</telephone>
     <nom>Toto</nom>
     <prenom>Toto</prenom>
   </com.bean.contact.Particulier>
+  <com.bean.contact.Entreprise>
+    <id>12</id>
+    <address>
+      <numeroCivique>4657</numeroCivique>
+      <rue>GeekStreet</rue>
+      <ville>InfoCity</ville>
+      <codePostal>I0I 0I0</codePostal>
+      <province>null part</province>
+      <contact class="com.bean.contact.Entreprise" reference="../.."/>
+      <id>12</id>
+    </address>
+    <courriel>geek.laptop@gmail.com</courriel>
+    <telephone>(450)654-9494</telephone>
+    <nom>Geek - laptop</nom>
+    <numeroEntreprise>0</numeroEntreprise>
+  </com.bean.contact.Entreprise>
   <com.bean.contact.Particulier>
     <id>11</id>
     <address>
@@ -85,7 +88,7 @@
       <codePostal>TIT ITI</codePostal>
       <province>TITI Village</province>
       <contact class="com.bean.contact.Particulier" reference="../.."/>
-      <id>0</id>
+      <id>11</id>
     </address>
     <courriel>titi@gmail.com</courriel>
     <telephone>(514)894-1234</telephone>

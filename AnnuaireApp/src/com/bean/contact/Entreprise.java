@@ -5,9 +5,9 @@ import com.bean.IBean;
 /**
  * La classe Entreprise représente une entreprise dans l'annuaire.
  */
-public class Entreprise extends Contact implements Comparable<IBean>{
+public class Entreprise extends Contact{
 
-	private String nomEntreprise;
+	private int numeroEntreprise;
 	
 	/**
 	 * Instancie une nouvelle entreprise.
@@ -26,34 +26,22 @@ public class Entreprise extends Contact implements Comparable<IBean>{
 	}
 
 	/**
-	 * Méthode d'accès à variable entreprise
-	 *
-	 * @return le nom entreprise
+	 * @return the numeroEntreprise
 	 */
-	public String getNomEntreprise() {
-		return nomEntreprise;
+	public int getNumeroEntreprise() {
+		return numeroEntreprise;
 	}
 
 	/**
-	 * Méthode pour fixer la variable nomEntreprise.
-	 *
-	 * @param nomEntreprise le nouveau nom entreprise
+	 * @param numeroEntreprise the numeroEntreprise to set
 	 */
-	public void setNomEntreprise(String nomEntreprise) {
-		this.nomEntreprise = nomEntreprise;
-	}
-	
-	@Override
-	public int compareTo(IBean o) {
-		Entreprise e1 = (Entreprise) o;
-	   return this.nomEntreprise.compareTo(e1.nomEntreprise);
+	public void setNumeroEntreprise(int numeroEntreprise) {
+		this.numeroEntreprise = numeroEntreprise;
 	}
 
 	@Override
-	public String toString() {
-		return "Entreprise [nomEntreprise=" + nomEntreprise + ", id=" + id + "]";
+	public int compareTo(IBean c) {
+		return this.nom.compareTo(((Contact)c).getNom());
 	}
-	
-	
 	
 }

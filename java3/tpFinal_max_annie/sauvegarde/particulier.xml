@@ -8,7 +8,7 @@
       <codePostal>TAT ATA</codePostal>
       <province>TATA Village</province>
       <contact class="com.bean.contact.Particulier" reference="../.."/>
-      <id>0</id>
+      <id>9</id>
     </address>
     <courriel>tata@gmail.com</courriel>
     <telephone>(450)634-7070</telephone>
@@ -24,7 +24,7 @@
       <codePostal>TOT OTO</codePostal>
       <province>TOTO Village</province>
       <contact class="com.bean.contact.Particulier" reference="../.."/>
-      <id>0</id>
+      <id>8</id>
     </address>
     <courriel>toto@gmail.com</courriel>
     <telephone>(514)639-4242</telephone>
@@ -40,7 +40,7 @@
       <codePostal>TIT ITI</codePostal>
       <province>TITI Village</province>
       <contact class="com.bean.contact.Particulier" reference="../.."/>
-      <id>0</id>
+      <id>11</id>
     </address>
     <courriel>titi@gmail.com</courriel>
     <telephone>(514)894-1234</telephone>

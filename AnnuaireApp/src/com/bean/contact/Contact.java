@@ -5,13 +5,14 @@ import com.bean.IBean;
 /**
  * La classe abstraite contact représente les informations d'une personne qui est dans l'annuaire.
  */
-public abstract class Contact implements IBean {
+public abstract class Contact implements IBean, Comparable<IBean>{
 
 	protected static int compteur = 1;
 	protected int id;
 	protected Address address;
 	protected String courriel;
 	protected String telephone;
+	protected String nom;
 	
 	public Contact() {
 		super();
@@ -79,6 +80,20 @@ public abstract class Contact implements IBean {
 	 */
 	public void setTelephone(String telephone) {
 		this.telephone = telephone;
+	}
+
+	/**
+	 * @return the nom
+	 */
+	public String getNom() {
+		return nom;
+	}
+
+	/**
+	 * @param nom the nom to set
+	 */
+	public void setNom(String nom) {
+		this.nom = nom;
 	}
 
 	@Override

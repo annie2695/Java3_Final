@@ -19,11 +19,9 @@
 </head>
 <body>
 	
-	<%User user = (User) request.getAttribute("user");
-		//user.getAddressBook().setListeParticuliers(Annuaire.getInstance().getListeParticulier());
-	%>
+	<%User user = (User) request.getAttribute("user");%>
 
-<h1>Bienvenue ï¿½ toi 
+<h1>Bienvenue à toi 
 <%	
 	user.getId();
 	if(user.getPrenom() == null){
@@ -49,9 +47,8 @@
 	<table class="table table-striped">
 		<thead>
 			<tr>
-				<th>ID</th>
 				<th>Nom</th>
-				<th>Tï¿½lï¿½phone</th>
+				<th>Téléphone</th>
 				<th>Courriel</th>
 				<th>Adresse</th>
 			</tr>
@@ -62,7 +59,6 @@
 	
 	%>
 			<tr>
-			<td><%= ((Contact)c).getId()%></td>
 		<%
 			if (c instanceof Particulier){
 		%>
@@ -70,7 +66,7 @@
 		<%
 			} else {
 		%>
-				<td><%= ((Entreprise)c).getNomEntreprise()%></td>
+				<td><%= ((Entreprise)c).getNom()%></td>
 		<%
 			}
 		%>
@@ -99,9 +95,8 @@
 	<table class="table table-striped">
 		<thead>
 			<tr>
-				<th>ID</th>
 				<th>Nom</th>
-				<th>Tï¿½lï¿½phone</th>
+				<th>Téléphone</th>
 				<th>Courriel</th>
 				<th>Adresse</th>
 				<th></th>
@@ -112,7 +107,6 @@
 		for(IBean c : user.getAddressBook().getListeParticuliers()){
 	%>
 			<tr>
-				<td><%= ((Contact)c).getId()%></td>
 				<td><%= ((Particulier)c).getPrenom()%> <%= ((Particulier)c).getNom()%></td>
 				<td><%= ((Contact)c).getTelephone()%></td>
 				<td><%= ((Contact)c).getCourriel()%></td>
@@ -140,8 +134,7 @@
 		for(IBean c : user.getAddressBook().getListeEntreprises()){
 	%>
 			<tr>
-				<td><%= ((Contact)c).getId()%></td>
-				<td><%= ((Entreprise)c).getNomEntreprise()%></td>
+				<td><%= ((Entreprise)c).getNom()%></td>
 				<td><%= ((Contact)c).getTelephone()%></td>
 				<td><%= ((Contact)c).getCourriel()%></td>
 				<td><%= ((Contact)c).getAddress().toString()%></td>

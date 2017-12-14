@@ -70,7 +70,7 @@ public class ServicePDF {
 			if (c instanceof Particulier) {
 				tab.addCell(((Particulier) c).getNom()+", "+((Particulier) c).getPrenom());
 			} else {
-				tab.addCell(((Entreprise)c).getNomEntreprise());
+				tab.addCell(((Entreprise)c).getNom());
 			}
 			
 			tab.addCell(((Contact)c).getTelephone());
