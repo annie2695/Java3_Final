@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.bean.IBean;
 import com.bean.annuaire.Annuaire;
 import com.bean.compte.User;
+import com.bean.contact.Particulier;
 import com.service.MailService;
 import com.service.ServiceAuthentification;
 import com.service.ServiceCRUD;
@@ -68,13 +69,14 @@ public class ControleurAnnuaire extends HttpServlet {
 			int idUserTrouver = ServiceAuthentification.validateUser(request.getParameter("username"), 
 					request.getParameter("pwd"), annuaire.getListeUser());
 			if(idUserTrouver != -1){
-				IBean user = ServiceCRUD.getByid(idUserTrouver, annuaire.getListeUser());
+				user = ServiceCRUD.getByid(idUserTrouver, annuaire.getListeUser());
 				request.setAttribute("user", user);
 				RequestDispatcher dispatcher = request.getRequestDispatcher("accueilUser.jsp");
 				dispatcher.forward(request, response);
 			}
 		}
 		else if(action.equalsIgnoreCase("consulterAnnuaire")){
+			request.setAttribute("user", user);
 			RequestDispatcher dispatcher = request.getRequestDispatcher("annuaire.jsp");
 			dispatcher.forward(request, response);
 		}
@@ -95,6 +97,14 @@ public class ControleurAnnuaire extends HttpServlet {
 			request.setAttribute("user", user);
 			RequestDispatcher dispatcher = request.getRequestDispatcher("accueilUser.jsp");
 			dispatcher.forward(request, response);
+		}
+		else if(action.equalsIgnoreCase("ajouterParticulier")){
+			// ajouter particulier dans carnet adresse CODE EN BAS
+			IBean contact = ServiceCRUD.getByid(Integer.parseInt(request.getParameter("contact")), annuaire.getListeParticulier());
+			IBean user = ServiceCRUD.getByid(Integer.parseInt(request.getParameter("user")), annuaire.getListeUser());
+			ServiceCRUD.addBean(contact, ((User) user).getAddressBook().getListeParticuliers());
+			
+			
 		}
 	}	
 

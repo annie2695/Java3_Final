@@ -8,9 +8,9 @@ import org.apache.logging.log4j.Logger;
 
 import com.bean.IBean;
 import com.bean.compte.User;
-import com.bean.contact.Contact;
 import com.bean.contact.Entreprise;
 import com.bean.contact.Particulier;
+import com.bean.contact.Contact;
 import com.itextpdf.text.Document;
 import com.itextpdf.text.Element;
 import com.itextpdf.text.Font;
@@ -30,7 +30,7 @@ public class ServicePDF {
 		cellule.setBorder(0);
 		cellule.setHorizontalAlignment(Element.ALIGN_LEFT);
 		
-		//écrire
+		//ï¿½crire
 		cellule.addElement(new Paragraph(contenu, new Font()));
 		return cellule;
 	}
@@ -62,7 +62,7 @@ public class ServicePDF {
 		PdfPTable tab = new PdfPTable(4);
 		
 		tab.addCell("Nom");
-		tab.addCell("Téléphone");
+		tab.addCell("Tï¿½lï¿½phone");
 		tab.addCell("Courriel");
 		tab.addCell("Adresse");
 		
@@ -88,7 +88,7 @@ public class ServicePDF {
 			doc.open();
 			
 			doc.add(genereEntete(u));
-			doc.add(genereTableauContact(u.getAddressBook().getFavoris()));
+			doc.add(genereTableauIBean(u.getAddressBook().getFavoris()));
 			
 			doc.close();
 		} catch (Exception e) {

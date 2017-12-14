@@ -23,7 +23,7 @@
 		user.getAddressBook().setListeParticuliers(Annuaire.getInstance().getListeParticulier());
 	%>
 
-<h1>Bienvenue à toi 
+<h1>Bienvenue ï¿½ toi 
 <%	
 	user.getId();
 	if(user.getPrenom() == null){
@@ -50,7 +50,7 @@
 		<thead>
 			<tr>
 				<th>Nom</th>
-				<th>Téléphone</th>
+				<th>Tï¿½lï¿½phone</th>
 				<th>Courriel</th>
 				<th>Adresse</th>
 			</tr>
@@ -90,7 +90,7 @@
 		<thead>
 			<tr>
 				<th>Nom</th>
-				<th>Téléphone</th>
+				<th>Tï¿½lï¿½phone</th>
 				<th>Courriel</th>
 				<th>Adresse</th>
 				<th></th>

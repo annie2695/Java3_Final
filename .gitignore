@@ -12,3 +12,7 @@ AnnuaireApp/\.settings/
 AnnuaireApp/\.classpath
 
 AnnuaireApp/target/
+
+AnnuaireWebApp/target/
+
+*.class

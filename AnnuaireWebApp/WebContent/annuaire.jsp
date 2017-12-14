@@ -1,3 +1,4 @@
+<%@page import="com.bean.compte.User"%>
 <%@page import="com.bean.contact.Entreprise"%>
 <%@page import="com.bean.contact.Particulier"%>
 <%@page import="com.bean.IBean"%>
@@ -32,13 +33,23 @@
 		</thead>
 		<tbody>
 	<%
+		User user = (User) request.getAttribute("user");
 		for(IBean c : Annuaire.getInstance().getListeParticulier()){
 	%>
 			<tr>
 				<td><%= ((Particulier)c).getPrenom()%> <%= ((Particulier)c).getNom()%></td>
 				<td><%= ((Contact)c).getTelephone()%></td>
 				<td><%= ((Contact)c).getCourriel()%></td>
-				<td><%= ((Contact)c).getAddress().toString()%></td>				
+				<td><%= ((Contact)c).getAddress().toString()%></td>
+				<!-- <td><a href="ControleurAnnuaire?action=ajouterParticulier&idParticulier=<%=((Contact)c).getId()%>&></a></td>-->
+				<td>
+					<form action="ControleurAnnuaire?action=ajouterParticulier" method="post">
+						<input type="hidden" name="user" value="<%= user%>">
+						<input type="hidden" name="contact" value="<%= c%>">
+						<button>Ajouter</button>
+					</form>
+				</td>
+			
 			</tr>
 	<%
 		}

@@ -9,11 +9,11 @@ import com.bean.compte.User;
 /**
  * @author <b>Maxime Pigeon</b> & <b>Annie Legault</b>
  *
- * Représente le carnet d'adresse d'un user.
+ *         Reprï¿½sente le carnet d'adresse d'un user.
  */
 public class AddressBook implements IBean {
 
-	private static int compteur =1;
+	private static int compteur = 1;
 	private int id;
 	
 	private Set<IBean> favoris;
@@ -21,7 +21,7 @@ public class AddressBook implements IBean {
 	private Set<IBean> listeEntreprises;
 	
 	private User user;
-	
+
 	/**
 	 * Constructeur de la classe.
 	 */
@@ -33,7 +33,8 @@ public class AddressBook implements IBean {
 	}
 
 	/**
-	 * Méthode d'accès au id du carnet d'adresse
+	 * Mï¿½thode d'accï¿½s au id du carnet d'adresse
+	 * 
 	 * @return Le id
 	 */
 	public int getId() {
@@ -41,7 +42,8 @@ public class AddressBook implements IBean {
 	}
 
 	/**
-	 * Méthode d'accès à la liste des favoris
+	 * Mï¿½thode d'accï¿½s ï¿½ la liste des favoris
+	 * 
 	 * @return La liste des favoris
 	 */
 	public Set<IBean> getFavoris() {
@@ -49,7 +51,8 @@ public class AddressBook implements IBean {
 	}
 
 	/**
-	 * Méthode d'accès à user.
+	 * Mï¿½thode d'accï¿½s ï¿½ user.
+	 * 
 	 * @return user
 	 *
 	 */
@@ -57,9 +60,9 @@ public class AddressBook implements IBean {
 		return user;
 	}
 
-	
 	/**
-	 * Méthode pour fixer la varaible user.
+	 * Mï¿½thode pour fixer la varaible user.
+	 * 
 	 * @param user
 	 */
 	public void setUser(User user) {
@@ -74,7 +77,8 @@ public class AddressBook implements IBean {
 	}
 
 	/**
-	 * @param listeParticuliers the listeParticuliers to set
+	 * @param listeParticuliers
+	 *            the listeParticuliers to set
 	 */
 	public void setListeParticuliers(Set<IBean> listeParticuliers) {
 		this.listeParticuliers = listeParticuliers;
@@ -88,7 +92,8 @@ public class AddressBook implements IBean {
 	}
 
 	/**
-	 * @param listeEntreprises the listeEntreprises to set
+	 * @param listeEntreprises
+	 *            the listeEntreprises to set
 	 */
 	public void setListeEntreprises(Set<IBean> listeEntreprises) {
 		this.listeEntreprises = listeEntreprises;
