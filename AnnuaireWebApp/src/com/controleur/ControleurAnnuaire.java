@@ -2,6 +2,7 @@ package com.controleur;
 
 import java.io.IOException;
 
+import javax.mail.Part;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -12,6 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.bean.IBean;
 import com.bean.annuaire.Annuaire;
 import com.bean.compte.User;
+import com.bean.contact.Contact;
 import com.bean.contact.Particulier;
 import com.service.MailService;
 import com.service.ServiceAuthentification;
@@ -25,6 +27,8 @@ import com.service.ServiceDAO;
 public class ControleurAnnuaire extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private static final String PATH_USER = "C:/java3/tpFinal_max_annie/sauvegarde/user.xml";
+	private static final String PATH_PARTICULIER = "C:/java3/tpFinal_max_annie/sauvegarde/particulier.xml";
+	private static final String PATH_ENTREPRISE = "C:/java3/tpFinal_max_annie/sauvegarde/entreprise.xml";
 	private IBean user;
 	
 	// Represente l'instance unique d'Annuaire(Singleton)
@@ -163,6 +167,35 @@ public class ControleurAnnuaire extends HttpServlet {
 			ServiceCRUD.addBean(contact, ((User) user).getAddressBook().getListeEntreprises());
 			request.setAttribute("user", user);
 			RequestDispatcher dispatcher = request.getRequestDispatcher("accueilUser.jsp");
+			dispatcher.forward(request, response);
+		}
+		else if (action.equalsIgnoreCase("supprimeAnnuaireP")) {
+			IBean contact = ServiceCRUD.getByid(Integer.parseInt(request.getParameter("contact")), annuaire.getListeParticulier());
+			ServiceCRUD.deleteBean(contact, annuaire.getListeParticulier());
+			ServiceDAO.saveToXml(annuaire.getListeParticulier(), PATH_PARTICULIER);
+			request.setAttribute("admin", ServiceCRUD.getByid(Integer.parseInt(request.getParameter("admin")), annuaire.getListeAdmin()));
+			RequestDispatcher dispatcher = request.getRequestDispatcher("accueilAdmin.jsp");
+			dispatcher.forward(request, response);
+		}
+		else if (action.equalsIgnoreCase("supprimeAnnuaireE")) {
+			IBean contact = ServiceCRUD.getByid(Integer.parseInt(request.getParameter("contact")), annuaire.getListeEntreprise());
+			ServiceCRUD.deleteBean(contact, annuaire.getListeEntreprise());
+			ServiceDAO.saveToXml(annuaire.getListeEntreprise(), PATH_ENTREPRISE);
+			request.setAttribute("admin", ServiceCRUD.getByid(Integer.parseInt(request.getParameter("admin")), annuaire.getListeAdmin()));
+			RequestDispatcher dispatcher = request.getRequestDispatcher("accueilAdmin.jsp");
+			dispatcher.forward(request, response);
+		}
+		else if (action.equalsIgnoreCase("nouveauParticulier")) {
+			Contact c = new Particulier(request.getParameter("numCivique"), request.getParameter("rue"), 
+					request.getParameter("ville"), request.getParameter("postalCode"), request.getParameter("province"));
+			c.setCourriel(request.getParameter("email"));
+			c.setNom(request.getParameter("nom"));
+			c.setTelephone(request.getParameter("phone"));
+			((Particulier)c).setPrenom(request.getParameter("prenom"));
+			ServiceCRUD.addBean(c, annuaire.getListeParticulier());
+			ServiceDAO.saveToXml(annuaire.getListeParticulier(), PATH_PARTICULIER);
+			request.setAttribute("admin", ServiceCRUD.getByid(Integer.parseInt(request.getParameter("admin")), annuaire.getListeAdmin()));
+			RequestDispatcher dispatcher = request.getRequestDispatcher("accueilAdmin.jsp");
 			dispatcher.forward(request, response);
 		}
 	}	

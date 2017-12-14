@@ -20,7 +20,7 @@
 <body>
 	<%Admin admin = (Admin) request.getAttribute("admin");%>
 
-<div class="container">
+
 <h1>Bienvenue a toi 
 <%	
 	admin.getId();
@@ -32,16 +32,22 @@
 	}	
  %>
 </h1>
-
 <hr>
 
-<table class="table table-striped">
+<div class="container">
+<div class="container" style="background-color:#f1f1f1">
+   <a class="btn btn-info" role="button" href="newParticulier.jsp?admin=<%= admin.getId()%>">Ajouter Particulier</a>
+   <a class="btn btn-info" role="button" href="newEntreprise.jsp">Ajouter Entreprise</a>
+ </div>
+	<h4>Particuliers</h4>
+	<table class="table table-striped">
 		<thead>
 			<tr>
 				<th>Nom</th>
 				<th>Téléphone</th>
 				<th>Courriel</th>
 				<th>Adresse</th>
+				<th></th>
 			</tr>
 		</thead>
 		<tbody>
@@ -53,10 +59,32 @@
 				<td><%= ((Contact)c).getTelephone()%></td>
 				<td><%= ((Contact)c).getCourriel()%></td>
 				<td><%= ((Contact)c).getAddress().toString()%></td>
+				<td>
+					<form action="ControleurAnnuaire?action=supprimeAnnuaireP" method="post">
+						<input type="hidden" name="admin" value="<%= admin.getId()%>">
+						<input type="hidden" name="contact" value="<%= c.getId()%>">
+						<button type="submit">Supprime</button>
+					</form>
+				</td>
 			</tr>
 	<%
 		}
 	%>
+		</tbody>
+	</table>
+	
+	<h4>Enterprises</h4>
+	<table class="table table-striped">
+		<thead>
+			<tr>
+				<th>Nom</th>
+				<th>Téléphone</th>
+				<th>Courriel</th>
+				<th>Adresse</th>
+				<th></th>
+			</tr>
+		</thead>
+		<tbody>
 	
 	<%
 		for(IBean c : Annuaire.getInstance().getListeEntreprise()){
@@ -65,7 +93,14 @@
 				<td><%= ((Entreprise)c).getNom()%></td>
 				<td><%= ((Contact)c).getTelephone()%></td>
 				<td><%= ((Contact)c).getCourriel()%></td>
-				<td><%= ((Contact)c).getAddress().toString()%></td>				
+				<td><%= ((Contact)c).getAddress().toString()%></td>
+				<td>
+					<form action="ControleurAnnuaire?action=supprimeAnnuaireE" method="post">
+						<input type="hidden" name="admin" value="<%= admin.getId()%>">
+						<input type="hidden" name="contact" value="<%= c.getId()%>">
+						<button type="submit">Supprime</button>
+					</form>
+				</td>				
 			</tr>
 	<%
 		}

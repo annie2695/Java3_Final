@@ -22,6 +22,7 @@
 	<h1>Annuaire!</h1>
 	<hr>
 	
+	<h4>Particuliers</h4>
 	<table class="table table-striped">
 		<thead>
 			<tr>
@@ -29,6 +30,7 @@
 				<th>Téléphone</th>
 				<th>Courriel</th>
 				<th>Adresse</th>
+				<th></th>
 			</tr>
 		</thead>
 		<tbody>
@@ -53,7 +55,21 @@
 	<%
 		}
 	%>
+		</tbody>
+	</table>
 	
+	<h4>Entreprises</h4>
+	<table class="table table-striped">
+		<thead>
+			<tr>
+				<th>Nom</th>
+				<th>Téléphone</th>
+				<th>Courriel</th>
+				<th>Adresse</th>
+				<th></th>
+			</tr>
+		</thead>
+		<tbody>
 	<%
 		for(IBean c : Annuaire.getInstance().getListeEntreprise()){
 	%>

@@ -51,6 +51,7 @@
 				<th>Téléphone</th>
 				<th>Courriel</th>
 				<th>Adresse</th>
+				<th></th>
 			</tr>
 		</thead>
 		<tbody>
@@ -99,6 +100,7 @@
 				<th>Téléphone</th>
 				<th>Courriel</th>
 				<th>Adresse</th>
+				<th></th>
 				<th></th>
 			</tr>
 		</thead>

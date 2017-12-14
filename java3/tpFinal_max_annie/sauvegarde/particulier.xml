@@ -1,5 +1,21 @@
 <Liste>
-	<com.bean.contact.Particulier>
+  <com.bean.contact.Particulier>
+    <id>1</id>
+    <address>
+      <numeroCivique>666</numeroCivique>
+      <rue>La mort</rue>
+      <ville>L&apos;enfer</ville>
+      <codePostal>666 666</codePostal>
+      <province>Sous-Terre</province>
+      <contact class="com.bean.contact.Particulier" reference="../.."/>
+      <id>1</id>
+    </address>
+    <courriel>diable.devil@gmail.com</courriel>
+    <telephone>(514)666-6666</telephone>
+    <nom>Devil</nom>
+    <prenom>Diable</prenom>
+  </com.bean.contact.Particulier>
+  <com.bean.contact.Particulier>
     <id>9</id>
     <address>
       <numeroCivique>789</numeroCivique>
