@@ -14,6 +14,7 @@ import com.bean.IBean;
 import com.bean.annuaire.Annuaire;
 import com.bean.compte.User;
 import com.bean.contact.Contact;
+import com.bean.contact.Entreprise;
 import com.bean.contact.Particulier;
 import com.service.MailService;
 import com.service.ServiceAuthentification;
@@ -194,6 +195,19 @@ public class ControleurAnnuaire extends HttpServlet {
 			((Particulier)c).setPrenom(request.getParameter("prenom"));
 			ServiceCRUD.addBean(c, annuaire.getListeParticulier());
 			ServiceDAO.saveToXml(annuaire.getListeParticulier(), PATH_PARTICULIER);
+			request.setAttribute("admin", ServiceCRUD.getByid(Integer.parseInt(request.getParameter("admin")), annuaire.getListeAdmin()));
+			RequestDispatcher dispatcher = request.getRequestDispatcher("accueilAdmin.jsp");
+			dispatcher.forward(request, response);
+		}
+		else if (action.equalsIgnoreCase("nouveauEntreprise")) {
+			Contact c = new Entreprise(request.getParameter("numCivique"), request.getParameter("rue"), 
+					request.getParameter("ville"), request.getParameter("postalCode"), request.getParameter("province"));
+			c.setCourriel(request.getParameter("email"));
+			c.setNom(request.getParameter("nom"));
+			c.setTelephone(request.getParameter("phone"));
+			((Entreprise)c).setNumeroEntreprise(request.getParameter("num"));
+			ServiceCRUD.addBean(c, annuaire.getListeEntreprise());
+			ServiceDAO.saveToXml(annuaire.getListeEntreprise(), PATH_ENTREPRISE);
 			request.setAttribute("admin", ServiceCRUD.getByid(Integer.parseInt(request.getParameter("admin")), annuaire.getListeAdmin()));
 			RequestDispatcher dispatcher = request.getRequestDispatcher("accueilAdmin.jsp");
 			dispatcher.forward(request, response);

@@ -1,20 +1,4 @@
 <Liste>
-	<com.bean.contact.Entreprise>
-    <id>10</id>
-    <address>
-      <numeroCivique>7534</numeroCivique>
-      <rue>sleepStreet</rue>
-      <ville>Silence</ville>
-      <codePostal>Z1Z 1Z1</codePostal>
-      <province>null part</province>
-      <contact class="com.bean.contact.Entreprise" reference="../.."/>
-      <id>10</id>
-    </address>
-    <courriel>sommeil.city@gmail.com</courriel>
-    <telephone>(514)555-5555</telephone>
-    <nom>Sommeil City</nom>
-    <numeroEntreprise>0</numeroEntreprise>
-  </com.bean.contact.Entreprise>
   <com.bean.contact.Entreprise>
     <id>7</id>
     <address>
@@ -32,6 +16,22 @@
     <numeroEntreprise>0</numeroEntreprise>
   </com.bean.contact.Entreprise>
   <com.bean.contact.Entreprise>
+    <id>1</id>
+    <address>
+      <numeroCivique>111</numeroCivique>
+      <rue>Pepperroni Street</rue>
+      <ville>Tomatos Sauce</ville>
+      <codePostal>H8Q 2M3</codePostal>
+      <province>Cheese Paradise</province>
+      <contact class="com.bean.contact.Entreprise" reference="../.."/>
+      <id>1</id>
+    </address>
+    <courriel>pizza@gmail.com</courriel>
+    <telephone>(450)333-0333</telephone>
+    <nom>Pizzzaaaa&apos;s</nom>
+    <numeroEntreprise>79846513</numeroEntreprise>
+  </com.bean.contact.Entreprise>
+  <com.bean.contact.Entreprise>
     <id>12</id>
     <address>
       <numeroCivique>4657</numeroCivique>
@@ -45,6 +45,22 @@
     <courriel>geek.laptop@gmail.com</courriel>
     <telephone>(450)654-9494</telephone>
     <nom>Geek - laptop</nom>
+    <numeroEntreprise>0</numeroEntreprise>
+  </com.bean.contact.Entreprise>
+  <com.bean.contact.Entreprise>
+    <id>10</id>
+    <address>
+      <numeroCivique>7534</numeroCivique>
+      <rue>sleepStreet</rue>
+      <ville>Silence</ville>
+      <codePostal>Z1Z 1Z1</codePostal>
+      <province>null part</province>
+      <contact class="com.bean.contact.Entreprise" reference="../.."/>
+      <id>10</id>
+    </address>
+    <courriel>sommeil.city@gmail.com</courriel>
+    <telephone>(514)555-5555</telephone>
+    <nom>Sommeil City</nom>
     <numeroEntreprise>0</numeroEntreprise>
   </com.bean.contact.Entreprise>
 </Liste>

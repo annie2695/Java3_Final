@@ -17,7 +17,7 @@
 <form method="post" action="ControleurAnnuaire?action=nouveauEntreprise">
 	<div class="container">
 		<label><b>Nom</b></label> 
-		<input type="text" name="lname" required>
+		<input type="text" name="nom" required>
 		<label><b>Numéro d'entreprise</b></label>
 		<input type="text" name="num" required>
 		<label><b>Téléphone</b></label> 
@@ -35,7 +35,7 @@
 		<label><b>Province</b></label> 
 		<input type="text" name="province" required>
 		
-		
+		<input type="hidden" name="admin" value="<%=request.getParameter("admin")%>">
 		<div class="clearfix">
 			<button type="button" class="cancelbtn">Cancel</button>
 			<button type="submit" class="signupbtn">Créer</button>

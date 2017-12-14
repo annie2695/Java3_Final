@@ -37,7 +37,7 @@
 <div class="container">
 <div class="container" style="background-color:#f1f1f1">
    <a class="btn btn-info" role="button" href="newParticulier.jsp?admin=<%= admin.getId()%>">Ajouter Particulier</a>
-   <a class="btn btn-info" role="button" href="newEntreprise.jsp">Ajouter Entreprise</a>
+   <a class="btn btn-info" role="button" href="newEntreprise.jsp?admin=<%= admin.getId()%>">Ajouter Entreprise</a>
  </div>
 	<h4>Particuliers</h4>
 	<table class="table table-striped">

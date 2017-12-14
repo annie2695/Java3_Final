@@ -7,7 +7,7 @@ import com.bean.IBean;
  */
 public class Entreprise extends Contact{
 
-	private int numeroEntreprise;
+	private String numeroEntreprise;
 	
 	/**
 	 * Instancie une nouvelle entreprise.
@@ -28,14 +28,14 @@ public class Entreprise extends Contact{
 	/**
 	 * @return the numeroEntreprise
 	 */
-	public int getNumeroEntreprise() {
+	public String getNumeroEntreprise() {
 		return numeroEntreprise;
 	}
 
 	/**
 	 * @param numeroEntreprise the numeroEntreprise to set
 	 */
-	public void setNumeroEntreprise(int numeroEntreprise) {
+	public void setNumeroEntreprise(String numeroEntreprise) {
 		this.numeroEntreprise = numeroEntreprise;
 	}
 
