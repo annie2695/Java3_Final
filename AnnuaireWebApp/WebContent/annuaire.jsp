@@ -44,9 +44,9 @@
 				<!-- <td><a href="ControleurAnnuaire?action=ajouterParticulier&idParticulier=<%=((Contact)c).getId()%>&></a></td>-->
 				<td>
 					<form action="ControleurAnnuaire?action=ajouterParticulier" method="post">
-						<input type="hidden" name="user" value="<%= user%>">
-						<input type="hidden" name="contact" value="<%= c%>">
-						<button>Ajouter</button>
+						<input type="hidden" name="user" value="<%= user.getId()%>">
+						<input type="hidden" name="contact" value="<%= c.getId()%>">
+						<button type="submit">Ajouter au carnet</button>
 					</form>
 				</td>
 			
@@ -62,7 +62,14 @@
 				<td><%= ((Entreprise)c).getNomEntreprise()%></td>
 				<td><%= ((Contact)c).getTelephone()%></td>
 				<td><%= ((Contact)c).getCourriel()%></td>
-				<td><%= ((Contact)c).getAddress().toString()%></td>				
+				<td><%= ((Contact)c).getAddress().toString()%></td>
+				<td>
+					<form action="ControleurAnnuaire?action=ajouterEntreprise" method="post">
+						<input type="hidden" name="user" value="<%= user.getId()%>">
+						<input type="hidden" name="contact" value="<%= c.getId()%>">
+						<button type="submit">Ajouter au carnet</button>
+					</form>
+				</td>				
 			</tr>
 	<%
 		}

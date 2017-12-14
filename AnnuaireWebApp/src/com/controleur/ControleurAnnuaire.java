@@ -46,7 +46,6 @@ public class ControleurAnnuaire extends HttpServlet {
 	
 	protected void processRequest(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-			
 		String action = request.getParameter("action");
 		if(action.equalsIgnoreCase("inscription")){
 			IBean newUser = new User(request.getParameter("username"), request.getParameter("psw"));
@@ -81,7 +80,7 @@ public class ControleurAnnuaire extends HttpServlet {
 			dispatcher.forward(request, response);
 		}
 		else if (action.equalsIgnoreCase("supprimeParticulier")) {
-			user = ServiceCRUD.getByid(Integer.parseInt(request.getParameter("user")), Annuaire.getInstance().getListeUser());
+			user = ServiceCRUD.getByid(Integer.parseInt(request.getParameter("user")), annuaire.getListeUser());
 			IBean contact = ServiceCRUD.getByid(Integer.parseInt(request.getParameter("contact")), 
 					((User)user).getAddressBook().getListeParticuliers());
 			ServiceCRUD.deleteBean(contact, ((User)user).getAddressBook().getListeParticuliers());
@@ -91,12 +90,11 @@ public class ControleurAnnuaire extends HttpServlet {
 		}
 		else if (action.equalsIgnoreCase("AjoutFavorisP")) {
 			user = ServiceCRUD.getByid(Integer.parseInt(request.getParameter("user")), Annuaire.getInstance().getListeUser());
-			IBean contact = ServiceCRUD.getByid(Integer.parseInt(request.getParameter("contact")), 
-					((User)user).getAddressBook().getListeParticuliers());
+			//IBean contact = ServiceCRUD.getByid(Integer.parseInt(request.getParameter("contact")), 
+					//((User)user).getAddressBook().getListeParticuliers());
+			IBean contact = ServiceCRUD.getByid(Integer.parseInt(request.getParameter("contact")), annuaire.getListeParticulier());
 			ServiceCRUD.addBean(contact, ((User)user).getAddressBook().getFavoris());
-			System.out.println("POTATOS4");
 			ServiceCRUD.deleteBean(contact, ((User)user).getAddressBook().getListeParticuliers());
-			System.out.println("POTATOS5");
 			request.setAttribute("user", user);
 			RequestDispatcher dispatcher = request.getRequestDispatcher("accueilUser.jsp");
 			dispatcher.forward(request, response);
@@ -106,6 +104,25 @@ public class ControleurAnnuaire extends HttpServlet {
 			IBean contact = ServiceCRUD.getByid(Integer.parseInt(request.getParameter("contact")), 
 					((User)user).getAddressBook().getListeEntreprises());
 			ServiceCRUD.deleteBean(contact, ((User)user).getAddressBook().getListeEntreprises());
+			request.setAttribute("user", user);
+			RequestDispatcher dispatcher = request.getRequestDispatcher("accueilUser.jsp");
+			dispatcher.forward(request, response);
+		}
+		else if(action.equalsIgnoreCase("supprimeFavorisParticulier")){
+			user = ServiceCRUD.getByid(Integer.parseInt(request.getParameter("user")), annuaire.getListeUser());			
+			IBean contact = ServiceCRUD.getByid(Integer.parseInt(request.getParameter("contact")), annuaire.getListeParticulier());
+			ServiceCRUD.deleteBean(contact, ((User)user).getAddressBook().getFavoris());
+			ServiceCRUD.addBean(contact, ((User)user).getAddressBook().getListeParticuliers());
+			request.setAttribute("user", user);
+			RequestDispatcher dispatcher = request.getRequestDispatcher("accueilUser.jsp");
+			dispatcher.forward(request, response);
+			
+		}
+		else if(action.equalsIgnoreCase("supprimeFavorisEntreprise")){
+			user = ServiceCRUD.getByid(Integer.parseInt(request.getParameter("user")), Annuaire.getInstance().getListeUser());
+			IBean contact = ServiceCRUD.getByid(Integer.parseInt(request.getParameter("contact")), annuaire.getListeEntreprise());
+			ServiceCRUD.deleteBean(contact, ((User)user).getAddressBook().getFavoris());
+			ServiceCRUD.addBean(contact, ((User)user).getAddressBook().getListeEntreprises());
 			request.setAttribute("user", user);
 			RequestDispatcher dispatcher = request.getRequestDispatcher("accueilUser.jsp");
 			dispatcher.forward(request, response);
@@ -121,13 +138,20 @@ public class ControleurAnnuaire extends HttpServlet {
 			dispatcher.forward(request, response);
 		}
 		else if(action.equalsIgnoreCase("ajouterParticulier")){
-			// ajouter particulier dans carnet adresse CODE EN BAS
 			IBean contact = ServiceCRUD.getByid(Integer.parseInt(request.getParameter("contact")), annuaire.getListeParticulier());
 			IBean user = ServiceCRUD.getByid(Integer.parseInt(request.getParameter("user")), annuaire.getListeUser());
 			ServiceCRUD.addBean(contact, ((User) user).getAddressBook().getListeParticuliers());
-			
-			
+			request.setAttribute("user", user);
+			RequestDispatcher dispatcher = request.getRequestDispatcher("accueilUser.jsp");
+			dispatcher.forward(request, response);
+		}
+		else if(action.equalsIgnoreCase("ajouterEntreprise")){
+			IBean contact = ServiceCRUD.getByid(Integer.parseInt(request.getParameter("contact")), annuaire.getListeEntreprise());
+			IBean user = ServiceCRUD.getByid(Integer.parseInt(request.getParameter("user")), annuaire.getListeUser());
+			ServiceCRUD.addBean(contact, ((User) user).getAddressBook().getListeEntreprises());
+			request.setAttribute("user", user);
+			RequestDispatcher dispatcher = request.getRequestDispatcher("accueilUser.jsp");
+			dispatcher.forward(request, response);
 		}
 	}	
-
 }

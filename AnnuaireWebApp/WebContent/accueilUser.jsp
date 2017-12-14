@@ -20,7 +20,7 @@
 <body>
 	
 	<%User user = (User) request.getAttribute("user");
-		user.getAddressBook().setListeParticuliers(Annuaire.getInstance().getListeParticulier());
+		//user.getAddressBook().setListeParticuliers(Annuaire.getInstance().getListeParticulier());
 	%>
 
 <h1>Bienvenue � toi 
@@ -49,6 +49,7 @@
 	<table class="table table-striped">
 		<thead>
 			<tr>
+				<th>ID</th>
 				<th>Nom</th>
 				<th>T�l�phone</th>
 				<th>Courriel</th>
@@ -61,6 +62,7 @@
 	
 	%>
 			<tr>
+			<td><%= ((Contact)c).getId()%></td>
 		<%
 			if (c instanceof Particulier){
 		%>
@@ -74,7 +76,15 @@
 		%>
 				<td><%= ((Contact)c).getTelephone()%></td>
 				<td><%= ((Contact)c).getCourriel()%></td>
-				<td><%= ((Contact)c).getAddress().toString()%></td>				
+				<td><%= ((Contact)c).getAddress().toString()%></td>
+				<td>
+					<form action="ControleurAnnuaire?action=supprimeFavoris<%=c.getClass().getSimpleName()%>" method="post">
+						<input type="hidden" name="user" value="<%=user.getId()%>">
+						<input type="hidden" name="contact" value="<%=c.getId()%>">
+						<input type="hidden" name="contactInstance" value="<%=c.getId()%>">
+						<button type="submit">Supprime</button>
+					</form>
+				</td>				
 			</tr>
 	<%
 		}
@@ -89,6 +99,7 @@
 	<table class="table table-striped">
 		<thead>
 			<tr>
+				<th>ID</th>
 				<th>Nom</th>
 				<th>T�l�phone</th>
 				<th>Courriel</th>
@@ -101,12 +112,13 @@
 		for(IBean c : user.getAddressBook().getListeParticuliers()){
 	%>
 			<tr>
+				<td><%= ((Contact)c).getId()%></td>
 				<td><%= ((Particulier)c).getPrenom()%> <%= ((Particulier)c).getNom()%></td>
 				<td><%= ((Contact)c).getTelephone()%></td>
 				<td><%= ((Contact)c).getCourriel()%></td>
 				<td><%= ((Contact)c).getAddress().toString()%></td>
 				<td>
-					<form action="ControleurAnnuaire?action=ajoutFavorisP" method="post">
+					<form action="ControleurAnnuaire?action=AjoutFavorisP" method="post">
 						<input type="hidden" name="user" value="<%=user.getId()%>">
 						<input type="hidden" name="contact" value="<%=c.getId()%>">
 						<button type="submit">Ajout Favoris</button>
@@ -128,6 +140,7 @@
 		for(IBean c : user.getAddressBook().getListeEntreprises()){
 	%>
 			<tr>
+				<td><%= ((Contact)c).getId()%></td>
 				<td><%= ((Entreprise)c).getNomEntreprise()%></td>
 				<td><%= ((Contact)c).getTelephone()%></td>
 				<td><%= ((Contact)c).getCourriel()%></td>

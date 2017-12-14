@@ -88,7 +88,7 @@ public class ServicePDF {
 			doc.open();
 			
 			doc.add(genereEntete(u));
-			doc.add(genereTableauIBean(u.getAddressBook().getFavoris()));
+			doc.add(genereTableauContact(u.getAddressBook().getFavoris()));
 			
 			doc.close();
 		} catch (Exception e) {

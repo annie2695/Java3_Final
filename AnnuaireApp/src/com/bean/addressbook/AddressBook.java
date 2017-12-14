@@ -27,9 +27,9 @@ public class AddressBook implements IBean {
 	 */
 	public AddressBook() {
 		this.id = compteur++;		
-		favoris = new HashSet<IBean>();
-		listeParticuliers = new HashSet<IBean>();
-		listeEntreprises = new HashSet<IBean>();
+		this.favoris = new HashSet<IBean>();
+		this.listeParticuliers = new HashSet<IBean>();
+		this.listeEntreprises = new HashSet<IBean>();
 	}
 
 	/**
@@ -105,5 +105,13 @@ public class AddressBook implements IBean {
 	public void setFavoris(Set<IBean> favoris) {
 		this.favoris = favoris;
 	}
+
+	@Override
+	public String toString() {
+		return "AddressBook [id=" + id + ", favoris=" + favoris + ", listeParticuliers=" + listeParticuliers
+				+ ", listeEntreprises=" + listeEntreprises + ", user=" + user + "]";
+	}
+	
+	
 	
 }

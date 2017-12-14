@@ -31,5 +31,13 @@ public class User extends Compte {
 	public void setCredentials(Credentials credentials) {
 		this.credentials = credentials;
 	}
+
+	@Override
+	public String toString() {
+		return "User [id=" + id + "]";
+	}
+
+	
+	
 	
 }

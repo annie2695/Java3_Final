@@ -84,4 +84,12 @@ public class Credentials {
 		this.secretsQuestions = secretsQuestions;
 	}
 
+	@Override
+	public String toString() {
+		return "Credentials [id=" + id + ", username=" + username + ", pwd=" + pwd + ", secretsQuestions="
+				+ secretsQuestions + "]";
+	}
+
+	
+	
 }

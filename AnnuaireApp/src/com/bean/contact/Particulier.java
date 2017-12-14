@@ -1,9 +1,11 @@
 package com.bean.contact;
 
+import com.bean.IBean;
+
 /**
  * La classe 
  */
-public class Particulier extends Contact {
+public class Particulier extends Contact implements Comparable<IBean> {
 
 	private String nom;
 	private String prenom;
@@ -58,7 +60,17 @@ public class Particulier extends Contact {
 	 */
 	@Override
 	public String toString() {
-		return "Particulier [nom=" + nom + ", prenom=" + prenom + "]";
+		return "Particulier [id= " + super.id + ", nom=" + nom + ", prenom=" + prenom + "]";
+	}
+
+	@Override
+	public int compareTo(IBean o) {
+		Particulier p1 = (Particulier) o;
+		if(this.nom.equals(p1.nom))
+	    {
+	      return this.prenom.compareTo(p1.prenom);
+	    }
+	   return this.nom.compareTo(p1.nom);
 	}
 	
 	

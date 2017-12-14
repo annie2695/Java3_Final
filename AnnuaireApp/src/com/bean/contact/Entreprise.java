@@ -1,9 +1,11 @@
 package com.bean.contact;
 
+import com.bean.IBean;
+
 /**
  * La classe Entreprise représente une entreprise dans l'annuaire.
  */
-public class Entreprise extends Contact {
+public class Entreprise extends Contact implements Comparable<IBean>{
 
 	private String nomEntreprise;
 	
@@ -39,6 +41,17 @@ public class Entreprise extends Contact {
 	 */
 	public void setNomEntreprise(String nomEntreprise) {
 		this.nomEntreprise = nomEntreprise;
+	}
+	
+	@Override
+	public int compareTo(IBean o) {
+		Entreprise e1 = (Entreprise) o;
+	   return this.nomEntreprise.compareTo(e1.nomEntreprise);
+	}
+
+	@Override
+	public String toString() {
+		return "Entreprise [nomEntreprise=" + nomEntreprise + ", id=" + id + "]";
 	}
 	
 	
