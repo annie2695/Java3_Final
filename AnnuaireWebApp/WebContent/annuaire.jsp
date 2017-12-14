@@ -24,7 +24,6 @@
 	<table class="table table-striped">
 		<thead>
 			<tr>
-				<th>Id</th>
 				<th>Nom</th>
 				<th>Téléphone</th>
 				<th>Courriel</th>
@@ -36,7 +35,6 @@
 		for(IBean c : Annuaire.getInstance().getListeParticulier()){
 	%>
 			<tr>
-				<td><%= ((Contact)c).getId()%></td>
 				<td><%= ((Particulier)c).getPrenom()%> <%= ((Particulier)c).getNom()%></td>
 				<td><%= ((Contact)c).getTelephone()%></td>
 				<td><%= ((Contact)c).getCourriel()%></td>
@@ -50,7 +48,6 @@
 		for(IBean c : Annuaire.getInstance().getListeEntreprise()){
 	%>
 			<tr>
-				<td><%= ((Contact)c).getId()%></td>
 				<td><%= ((Entreprise)c).getNomEntreprise()%></td>
 				<td><%= ((Contact)c).getTelephone()%></td>
 				<td><%= ((Contact)c).getCourriel()%></td>

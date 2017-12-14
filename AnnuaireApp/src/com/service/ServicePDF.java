@@ -6,6 +6,7 @@ import java.util.Set;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import com.bean.IBean;
 import com.bean.compte.User;
 import com.bean.contact.Contact;
 import com.bean.contact.Entreprise;
@@ -57,7 +58,7 @@ public class ServicePDF {
 		return entete;
 	}
 	
-	private static PdfPTable genereTableauContact(Set<Contact> contacts) {
+	private static PdfPTable genereTableauContact(Set<IBean> contacts) {
 		PdfPTable tab = new PdfPTable(4);
 		
 		tab.addCell("Nom");
@@ -65,16 +66,16 @@ public class ServicePDF {
 		tab.addCell("Courriel");
 		tab.addCell("Adresse");
 		
-		for (Contact c : contacts) {
+		for (IBean c : contacts) {
 			if (c instanceof Particulier) {
 				tab.addCell(((Particulier) c).getNom()+", "+((Particulier) c).getPrenom());
 			} else {
 				tab.addCell(((Entreprise)c).getNomEntreprise());
 			}
 			
-			tab.addCell(c.getTelephone());
-			tab.addCell(c.getCourriel());
-			tab.addCell(c.getAddress().toString());
+			tab.addCell(((Contact)c).getTelephone());
+			tab.addCell(((Contact)c).getCourriel());
+			tab.addCell(((Contact)c).getAddress().toString());
 		}
 		return null;
 	}

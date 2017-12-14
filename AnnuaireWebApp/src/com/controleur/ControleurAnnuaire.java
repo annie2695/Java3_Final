@@ -24,6 +24,7 @@ import com.service.ServiceDAO;
 public class ControleurAnnuaire extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private static final String PATH_USER = "C:/java3/tpFinal_max_annie/sauvegarde/user.xml";
+	private IBean user;
 	
 	// Represente l'instance unique d'Annuaire(Singleton)
 	private Annuaire annuaire;
@@ -69,12 +70,30 @@ public class ControleurAnnuaire extends HttpServlet {
 			if(idUserTrouver != -1){
 				IBean user = ServiceCRUD.getByid(idUserTrouver, annuaire.getListeUser());
 				request.setAttribute("user", user);
-				RequestDispatcher dispatcher = request.getRequestDispatcher("authentification.jsp");
+				RequestDispatcher dispatcher = request.getRequestDispatcher("accueilUser.jsp");
 				dispatcher.forward(request, response);
 			}
 		}
 		else if(action.equalsIgnoreCase("consulterAnnuaire")){
 			RequestDispatcher dispatcher = request.getRequestDispatcher("annuaire.jsp");
+			dispatcher.forward(request, response);
+		}
+		else if (action.equalsIgnoreCase("supprimeParticulier")) {
+			user = ServiceCRUD.getByid(Integer.parseInt(request.getParameter("user")), Annuaire.getInstance().getListeUser());
+			IBean contact = ServiceCRUD.getByid(Integer.parseInt(request.getParameter("contact")), 
+					((User)user).getAddressBook().getListeParticuliers());
+			ServiceCRUD.deleteBean(contact, ((User)user).getAddressBook().getListeParticuliers());
+			request.setAttribute("user", user);
+			RequestDispatcher dispatcher = request.getRequestDispatcher("accueilUser.jsp");
+			dispatcher.forward(request, response);
+		}
+		else if (action.equalsIgnoreCase("supprimeEntreprise")) {
+			user = ServiceCRUD.getByid(Integer.parseInt(request.getParameter("user")), Annuaire.getInstance().getListeUser());
+			IBean contact = ServiceCRUD.getByid(Integer.parseInt(request.getParameter("contact")), 
+					((User)user).getAddressBook().getListeEntreprises());
+			ServiceCRUD.deleteBean(contact, ((User)user).getAddressBook().getListeEntreprises());
+			request.setAttribute("user", user);
+			RequestDispatcher dispatcher = request.getRequestDispatcher("accueilUser.jsp");
 			dispatcher.forward(request, response);
 		}
 	}	

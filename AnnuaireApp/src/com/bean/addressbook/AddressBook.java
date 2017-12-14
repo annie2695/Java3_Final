@@ -5,7 +5,6 @@ import java.util.TreeSet;
 
 import com.bean.IBean;
 import com.bean.compte.User;
-import com.bean.contact.Contact;
 
 /**
  * @author <b>Maxime Pigeon</b> & <b>Annie Legault</b>
@@ -17,9 +16,9 @@ public class AddressBook implements IBean {
 	private static int compteur =1;
 	private int id;
 	
-	private Set<Contact> favoris;
-	private Set<Contact> listeParticuliers;
-	private Set<Contact> listeEntreprises;
+	private Set<IBean> favoris;
+	private Set<IBean> listeParticuliers;
+	private Set<IBean> listeEntreprises;
 	
 	private User user;
 	
@@ -28,9 +27,9 @@ public class AddressBook implements IBean {
 	 */
 	public AddressBook() {
 		this.id = compteur++;		
-		favoris = new TreeSet<Contact>();
-		listeParticuliers = new TreeSet<Contact>();
-		listeEntreprises = new TreeSet<Contact>();
+		favoris = new TreeSet<IBean>();
+		listeParticuliers = new TreeSet<IBean>();
+		listeEntreprises = new TreeSet<IBean>();
 	}
 
 	/**
@@ -45,7 +44,7 @@ public class AddressBook implements IBean {
 	 * Méthode d'accès à la liste des favoris
 	 * @return La liste des favoris
 	 */
-	public Set<Contact> getFavoris() {
+	public Set<IBean> getFavoris() {
 		return favoris;
 	}
 
@@ -70,29 +69,36 @@ public class AddressBook implements IBean {
 	/**
 	 * @return the listeParticuliers
 	 */
-	public Set<Contact> getListeParticuliers() {
+	public Set<IBean> getListeParticuliers() {
 		return listeParticuliers;
 	}
 
 	/**
 	 * @param listeParticuliers the listeParticuliers to set
 	 */
-	public void setListeParticuliers(Set<Contact> listeParticuliers) {
+	public void setListeParticuliers(Set<IBean> listeParticuliers) {
 		this.listeParticuliers = listeParticuliers;
 	}
 
 	/**
 	 * @return the listeEntreprises
 	 */
-	public Set<Contact> getListeEntreprises() {
+	public Set<IBean> getListeEntreprises() {
 		return listeEntreprises;
 	}
 
 	/**
 	 * @param listeEntreprises the listeEntreprises to set
 	 */
-	public void setListeEntreprises(Set<Contact> listeEntreprises) {
+	public void setListeEntreprises(Set<IBean> listeEntreprises) {
 		this.listeEntreprises = listeEntreprises;
+	}
+
+	/**
+	 * @param favoris the favoris to set
+	 */
+	public void setFavoris(Set<IBean> favoris) {
+		this.favoris = favoris;
 	}
 	
 }
