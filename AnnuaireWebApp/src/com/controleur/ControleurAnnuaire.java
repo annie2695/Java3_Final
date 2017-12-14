@@ -87,10 +87,32 @@ public class ControleurAnnuaire extends HttpServlet {
 			RequestDispatcher dispatcher = request.getRequestDispatcher("accueilUser.jsp");
 			dispatcher.forward(request, response);
 		}
+		else if (action.equalsIgnoreCase("AjoutFavorisP")) {
+			user = ServiceCRUD.getByid(Integer.parseInt(request.getParameter("user")), Annuaire.getInstance().getListeUser());
+			IBean contact = ServiceCRUD.getByid(Integer.parseInt(request.getParameter("contact")), 
+					((User)user).getAddressBook().getListeParticuliers());
+			ServiceCRUD.addBean(contact, ((User)user).getAddressBook().getFavoris());
+			System.out.println("POTATOS4");
+			ServiceCRUD.deleteBean(contact, ((User)user).getAddressBook().getListeParticuliers());
+			System.out.println("POTATOS5");
+			request.setAttribute("user", user);
+			RequestDispatcher dispatcher = request.getRequestDispatcher("accueilUser.jsp");
+			dispatcher.forward(request, response);
+		}
 		else if (action.equalsIgnoreCase("supprimeEntreprise")) {
 			user = ServiceCRUD.getByid(Integer.parseInt(request.getParameter("user")), Annuaire.getInstance().getListeUser());
 			IBean contact = ServiceCRUD.getByid(Integer.parseInt(request.getParameter("contact")), 
 					((User)user).getAddressBook().getListeEntreprises());
+			ServiceCRUD.deleteBean(contact, ((User)user).getAddressBook().getListeEntreprises());
+			request.setAttribute("user", user);
+			RequestDispatcher dispatcher = request.getRequestDispatcher("accueilUser.jsp");
+			dispatcher.forward(request, response);
+		}
+		else if (action.equalsIgnoreCase("AjoutFavorisE")) {
+			user = ServiceCRUD.getByid(Integer.parseInt(request.getParameter("user")), Annuaire.getInstance().getListeUser());
+			IBean contact = ServiceCRUD.getByid(Integer.parseInt(request.getParameter("contact")), 
+					((User)user).getAddressBook().getListeEntreprises());
+			ServiceCRUD.addBean(contact, ((User)user).getAddressBook().getFavoris());
 			ServiceCRUD.deleteBean(contact, ((User)user).getAddressBook().getListeEntreprises());
 			request.setAttribute("user", user);
 			RequestDispatcher dispatcher = request.getRequestDispatcher("accueilUser.jsp");

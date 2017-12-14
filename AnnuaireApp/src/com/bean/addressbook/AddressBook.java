@@ -1,7 +1,7 @@
 package com.bean.addressbook;
 
+import java.util.HashSet;
 import java.util.Set;
-import java.util.TreeSet;
 
 import com.bean.IBean;
 import com.bean.compte.User;
@@ -27,9 +27,9 @@ public class AddressBook implements IBean {
 	 */
 	public AddressBook() {
 		this.id = compteur++;		
-		favoris = new TreeSet<IBean>();
-		listeParticuliers = new TreeSet<IBean>();
-		listeEntreprises = new TreeSet<IBean>();
+		favoris = new HashSet<IBean>();
+		listeParticuliers = new HashSet<IBean>();
+		listeEntreprises = new HashSet<IBean>();
 	}
 
 	/**

@@ -106,6 +106,13 @@
 				<td><%= ((Contact)c).getCourriel()%></td>
 				<td><%= ((Contact)c).getAddress().toString()%></td>
 				<td>
+					<form action="ControleurAnnuaire?action=ajoutFavorisP" method="post">
+						<input type="hidden" name="user" value="<%=user.getId()%>">
+						<input type="hidden" name="contact" value="<%=c.getId()%>">
+						<button type="submit">Ajout Favoris</button>
+					</form>
+				</td>
+				<td>
 					<form action="ControleurAnnuaire?action=supprimeParticulier" method="post">
 						<input type="hidden" name="user" value="<%=user.getId()%>">
 						<input type="hidden" name="contact" value="<%=c.getId()%>">
@@ -125,6 +132,13 @@
 				<td><%= ((Contact)c).getTelephone()%></td>
 				<td><%= ((Contact)c).getCourriel()%></td>
 				<td><%= ((Contact)c).getAddress().toString()%></td>
+				<td>
+					<form action="ControleurAnnuaire?action=ajoutFavorisE" method="post">
+						<input type="hidden" name="user" value="<%=user.getId()%>">
+						<input type="hidden" name="contact" value="<%=c.getId()%>">
+						<button type="submit">Ajout Favoris</button>
+					</form>
+				</td>
 				<td>
 					<form action="ControleurAnnuaire?action=supprimeEntreprise" method="post">
 						<input type="hidden" name="user" value="<%=user.getId()%>">
