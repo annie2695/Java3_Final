@@ -90,7 +90,10 @@ public class ControleurAnnuaire extends HttpServlet {
 					dispatcher.forward(request, response);
 				}
 			}
-			
+			else{
+				RequestDispatcher dispatcher = request.getRequestDispatcher("erreurLogin.jsp");
+				dispatcher.forward(request, response);
+			}
 		}
 		else if(action.equalsIgnoreCase("consulterAnnuaire")){
 			request.setAttribute("user", user);
