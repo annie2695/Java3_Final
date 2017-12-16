@@ -28,45 +28,45 @@ public class LireCompteurProperties {
 		
 	}
 
-	public static int getCompteur(String IBean){
+	public static int getCompteur(String bean){
 		int compteur = -1;
 		int nouveauCompteur = -1;
 		try {
 			Properties props = new Properties();
 			props.load(new FileInputStream(PATH_PROPS));
-			switch (IBean) {
-			case "compte":
-					compteur = Integer.parseInt(props.getProperty("compteurCompte"));
-					nouveauCompteur = compteur;
-					compteur++;
-					props.setProperty("compteurCompte", String.valueOf(compteur));
+			switch (bean) {
+				case "compte":
+						compteur = Integer.parseInt(props.getProperty("compteurCompte"));
+						nouveauCompteur = compteur;
+						compteur++;
+						props.setProperty("compteurCompte", String.valueOf(compteur));
+						break;
+				case "credentials":
+						compteur = Integer.parseInt(props.getProperty("compteurCredentials"));
+						nouveauCompteur = compteur;
+						compteur++;
+						props.setProperty("compteurCredentials", String.valueOf(compteur));
+						break;
+				case "adressBook":
+						compteur = Integer.parseInt(props.getProperty("compteurAdressBook"));
+						nouveauCompteur = compteur;
+						compteur++;
+						props.setProperty("compteurAdressBook", String.valueOf(compteur));
+						break;
+				case "contact":
+						compteur = Integer.parseInt(props.getProperty("compteurContact"));
+						nouveauCompteur = compteur;
+						compteur++;
+						props.setProperty("compteurContact", String.valueOf(compteur));
+						break;
+				case "address":
+						compteur = Integer.parseInt(props.getProperty("compteurAddress"));
+						nouveauCompteur = compteur;
+						compteur++;
+						props.setProperty("compteurAddress", String.valueOf(compteur));
+						break;
+				default:
 					break;
-			case "credentials":
-					compteur = Integer.parseInt(props.getProperty("compteurCredentials"));
-					nouveauCompteur = compteur;
-					compteur++;
-					props.setProperty("compteurCredentials", String.valueOf(compteur));
-					break;
-			case "adressBook":
-					compteur = Integer.parseInt(props.getProperty("compteurAdressBook"));
-					nouveauCompteur = compteur;
-					compteur++;
-					props.setProperty("compteurAdressBook", String.valueOf(compteur));
-					break;
-			case "contact":
-					compteur = Integer.parseInt(props.getProperty("compteurContact"));
-					nouveauCompteur = compteur;
-					compteur++;
-					props.setProperty("compteurContact", String.valueOf(compteur));
-					break;
-			case "address":
-					compteur = Integer.parseInt(props.getProperty("compteurAddress"));
-					nouveauCompteur = compteur;
-					compteur++;
-					props.setProperty("compteurAddress", String.valueOf(compteur));
-					break;
-			default:
-				break;
 			}
 			File file = new File(PATH_PROPS);
 			FileOutputStream fileOut = new FileOutputStream(file);

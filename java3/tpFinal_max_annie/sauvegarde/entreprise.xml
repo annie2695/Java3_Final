@@ -1,18 +1,34 @@
 <Liste>
   <com.bean.contact.Entreprise>
-    <id>7</id>
+    <id>2</id>
     <address>
-      <numeroCivique>123</numeroCivique>
-      <rue>patateDouce</rue>
-      <ville>Friterie</ville>
-      <codePostal>La-bas</codePostal>
+      <numeroCivique>521</numeroCivique>
+      <rue>college Street</rue>
+      <ville>fail City</ville>
+      <codePostal>H8S 2P4</codePostal>
+      <province>Jeune</province>
+      <contact class="com.bean.contact.Entreprise" reference="../.."/>
+      <id>2</id>
+    </address>
+    <courriel>al@gmail.com</courriel>
+    <telephone>(450)631-5487</telephone>
+    <nom>AL</nom>
+    <numeroEntreprise>789454</numeroEntreprise>
+  </com.bean.contact.Entreprise>
+  <com.bean.contact.Entreprise>
+    <id>10</id>
+    <address>
+      <numeroCivique>7534</numeroCivique>
+      <rue>sleepStreet</rue>
+      <ville>Silence</ville>
+      <codePostal>Z1Z 1Z1</codePostal>
       <province>null part</province>
       <contact class="com.bean.contact.Entreprise" reference="../.."/>
-      <id>7</id>
+      <id>10</id>
     </address>
-    <courriel>potatos911@gmail.com</courriel>
-    <telephone>(514)999-0999</telephone>
-    <nom>Potatos 911</nom>
+    <courriel>sommeil.city@gmail.com</courriel>
+    <telephone>(514)555-5555</telephone>
+    <nom>Sommeil City</nom>
     <numeroEntreprise>0</numeroEntreprise>
   </com.bean.contact.Entreprise>
   <com.bean.contact.Entreprise>
@@ -45,22 +61,6 @@
     <courriel>geek.laptop@gmail.com</courriel>
     <telephone>(450)654-9494</telephone>
     <nom>Geek - laptop</nom>
-    <numeroEntreprise>0</numeroEntreprise>
-  </com.bean.contact.Entreprise>
-  <com.bean.contact.Entreprise>
-    <id>10</id>
-    <address>
-      <numeroCivique>7534</numeroCivique>
-      <rue>sleepStreet</rue>
-      <ville>Silence</ville>
-      <codePostal>Z1Z 1Z1</codePostal>
-      <province>null part</province>
-      <contact class="com.bean.contact.Entreprise" reference="../.."/>
-      <id>10</id>
-    </address>
-    <courriel>sommeil.city@gmail.com</courriel>
-    <telephone>(514)555-5555</telephone>
-    <nom>Sommeil City</nom>
     <numeroEntreprise>0</numeroEntreprise>
   </com.bean.contact.Entreprise>
 </Liste>

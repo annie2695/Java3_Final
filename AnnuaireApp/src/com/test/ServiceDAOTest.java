@@ -11,6 +11,8 @@ import org.junit.Ignore;
 import org.junit.Test;
 
 import com.bean.IBean;
+import com.bean.compte.Admin;
+import com.bean.compte.User;
 import com.bean.contact.Entreprise;
 import com.bean.contact.Particulier;
 import com.service.ServiceDAO;
@@ -18,12 +20,13 @@ import com.service.ServiceDAO;
 public class ServiceDAOTest {
 
 	IBean b1, b2, b3, b4, b5, b6;
-	Set<IBean> listeBean, listeUser, listeAdmin;
-	String path;
+	//Set<IBean> listeBean;
+	Set<IBean> listeAdmin, listeUser;
+	String pathAdmin, pathUser;
 	
 	@Before
 	public void setUp() throws Exception {
-		b1 = new Entreprise("123", "patateDouce", "Friterie", "La-bas", "null part");
+		/*b1 = new Entreprise("123", "patateDouce", "Friterie", "La-bas", "null part");
 		((Entreprise)b1).setNom("Potatos 911");
 		((Entreprise)b1).setTelephone("(514)999-0999");
 		((Entreprise)b1).setCourriel("potatos911@gmail.com");
@@ -52,34 +55,51 @@ public class ServiceDAOTest {
 		listeBean = new HashSet<IBean>();
 		listeBean.add(b1);listeBean.add(b2);listeBean.add(b3);
 		listeBean.add(b4);listeBean.add(b5);listeBean.add(b6);
-		listeUser = new HashSet<IBean>();
-		listeAdmin = new HashSet<IBean>();
-		listeAdmin.add(b1);listeUser.add(b2);listeUser.add(b3);
-		listeAdmin.add(b4);listeUser.add(b5);listeAdmin.add(b6);
 		
-		ServiceDAO.saveToXml(listeAdmin, "C:/java3/tpFinal_max_annie/sauvegarde/entreprise.xml");
-		ServiceDAO.saveToXml(listeUser, "C:/java3/tpFinal_max_annie/sauvegarde/particulier.xml");
+		path = "C:/java3/tpFinal_max_annie/sauvegarde/Annuaire.xml";*/
 		
-		path = "C:/java3/tpFinal_max_annie/sauvegarde/Annuaire.xml";
+		b1 = new Admin("reda", "reda");
+		b2 = new Admin("max", "max");
+		b3 = new Admin("annie", "annie");
+		
+		b4 = new User("koko", "koko");
+		((User)b4).setEmail("koko@gmail.com");
+		
+		b5 = new User("kaka", "kaka");
+		((User)b4).setEmail("kaka@gmail.com");
+		
+		b6 = new User("kiki", "kiki");
+		((User)b4).setEmail("kiki@gmail.com");
+		
+		listeAdmin = new HashSet<>();
+		listeUser= new HashSet<>();
+		
+		listeAdmin.add(b1);listeAdmin.add(b2);listeAdmin.add(b3);
+		listeUser.add(b4);listeUser.add(b5);listeUser.add(b6);
+		
+		pathAdmin = "C:/java3/tpFinal_max_annie/sauvegarde/admin.xml";
+		pathUser = "C:/java3/tpFinal_max_annie/sauvegarde/user.xml";
+		
+		ServiceDAO.saveToXml(listeAdmin, pathAdmin);
 	}
 
 	@After
 	public void tearDown() throws Exception {
 		b1 = null; b2=null; b3=null;
 		b4 = null; b5=null; b6=null;
-		listeBean =null;
-		listeAdmin =null;listeUser =null;
-		path = null;
+		//listeBean =null;
+		listeAdmin=null; listeUser=null;
+		pathAdmin = null;pathUser = null;
 	}
 
 	@Test
 	public void testSaveToXml() {
-		assertTrue(ServiceDAO.saveToXml(listeBean, path));
+		assertTrue(ServiceDAO.saveToXml(listeUser, pathUser));
 	}
 
 	@Ignore
 	public void testLoadFromXml() {
-		assertNotNull(ServiceDAO.loadFromXml(path));
+		assertNotNull(ServiceDAO.loadFromXml(pathAdmin));
 	}
 
 }

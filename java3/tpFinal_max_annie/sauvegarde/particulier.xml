@@ -16,22 +16,6 @@
     <prenom>Diable</prenom>
   </com.bean.contact.Particulier>
   <com.bean.contact.Particulier>
-    <id>9</id>
-    <address>
-      <numeroCivique>789</numeroCivique>
-      <rue>tataStreet</rue>
-      <ville>tataCity</ville>
-      <codePostal>TAT ATA</codePostal>
-      <province>TATA Village</province>
-      <contact class="com.bean.contact.Particulier" reference="../.."/>
-      <id>9</id>
-    </address>
-    <courriel>tata@gmail.com</courriel>
-    <telephone>(450)634-7070</telephone>
-    <nom>Tata</nom>
-    <prenom>Tata</prenom>
-  </com.bean.contact.Particulier>
-  <com.bean.contact.Particulier>
     <id>8</id>
     <address>
       <numeroCivique>456</numeroCivique>
@@ -46,6 +30,22 @@
     <telephone>(514)639-4242</telephone>
     <nom>Toto</nom>
     <prenom>Toto</prenom>
+  </com.bean.contact.Particulier>
+  <com.bean.contact.Particulier>
+    <id>1</id>
+    <address>
+      <numeroCivique>465</numeroCivique>
+      <rue>tataSreet</rue>
+      <ville>tataCity</ville>
+      <codePostal>TAT ATA</codePostal>
+      <province>TATA Village</province>
+      <contact class="com.bean.contact.Particulier" reference="../.."/>
+      <id>1</id>
+    </address>
+    <courriel>tata@gmail.com</courriel>
+    <telephone>(514)369-7412</telephone>
+    <nom>TATA</nom>
+    <prenom>TATA</prenom>
   </com.bean.contact.Particulier>
   <com.bean.contact.Particulier>
     <id>11</id>

@@ -1,26 +1,26 @@
 <Liste>
   <com.bean.compte.Admin>
-    <id>1</id>
+    <id>2</id>
     <credentials>
-      <id>1</id>
-      <username>areda</username>
-      <pwd>reda</pwd>
+      <id>2</id>
+      <username>amax</username>
+      <pwd>max</pwd>
     </credentials>
   </com.bean.compte.Admin>
   <com.bean.compte.Admin>
     <id>3</id>
     <credentials>
       <id>3</id>
-      <username>amax</username>
-      <pwd>max</pwd>
+      <username>aannie</username>
+      <pwd>annie</pwd>
     </credentials>
   </com.bean.compte.Admin>
   <com.bean.compte.Admin>
-    <id>2</id>
+    <id>1</id>
     <credentials>
-      <id>2</id>
-      <username>aannie</username>
-      <pwd>annie</pwd>
+      <id>1</id>
+      <username>areda</username>
+      <pwd>reda</pwd>
     </credentials>
   </com.bean.compte.Admin>
 </Liste>
