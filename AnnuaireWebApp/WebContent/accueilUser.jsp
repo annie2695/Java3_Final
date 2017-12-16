@@ -36,10 +36,11 @@
 </h1>
 
 <div class="container" style="background-color:#f1f1f1">
-<form method="post" action="ControleurAnnuaire?action=consulterAnnuaire" style="float:left;">
-     <button type="submit">Consulter Annuaire</button>
+<form method="post" action="ControleurUser?action=consulterAnnuaire" style="float:left;">
+	<input type="hidden" name="user" value="<%= user.getId()%>">
+    <button type="submit">Consulter Annuaire</button>
 </form>
-<form method="post" action="ControleurAnnuaire?action=generePDF">
+<form method="post" action="ControleurUser?action=generePDF">
 	<input type="hidden" name="user" value="<%= user.getId()%>">
     <button type="submit">Generer mon carnet</button>
 </form>
@@ -79,7 +80,7 @@
 				<td><%= ((Contact)c).getCourriel()%></td>
 				<td><%= ((Contact)c).getAddress().toString()%></td>
 				<td>
-					<form action="ControleurAnnuaire?action=supprimeFavoris<%=c.getClass().getSimpleName()%>" method="post">
+					<form action="ControleurUser?action=supprimeFavoris<%=c.getClass().getSimpleName()%>" method="post">
 						<input type="hidden" name="user" value="<%=user.getId()%>">
 						<input type="hidden" name="contact" value="<%=c.getId()%>">
 						<input type="hidden" name="contactInstance" value="<%=c.getId()%>">
@@ -119,14 +120,14 @@
 				<td><%= ((Contact)c).getCourriel()%></td>
 				<td><%= ((Contact)c).getAddress().toString()%></td>
 				<td>
-					<form action="ControleurAnnuaire?action=AjoutFavorisP" method="post">
+					<form action="ControleurUser?action=AjoutFavorisP" method="post">
 						<input type="hidden" name="user" value="<%=user.getId()%>">
 						<input type="hidden" name="contact" value="<%=c.getId()%>">
 						<button type="submit">Ajout Favoris</button>
 					</form>
 				</td>
 				<td>
-					<form action="ControleurAnnuaire?action=supprimeParticulier" method="post">
+					<form action="ControleurUser?action=supprimeParticulier" method="post">
 						<input type="hidden" name="user" value="<%=user.getId()%>">
 						<input type="hidden" name="contact" value="<%=c.getId()%>">
 						<button type="submit">Supprime</button>
@@ -162,14 +163,14 @@
 				<td><%= ((Contact)c).getCourriel()%></td>
 				<td><%= ((Contact)c).getAddress().toString()%></td>
 				<td>
-					<form action="ControleurAnnuaire?action=ajoutFavorisE" method="post">
+					<form action="ControleurUser?action=ajoutFavorisE" method="post">
 						<input type="hidden" name="user" value="<%=user.getId()%>">
 						<input type="hidden" name="contact" value="<%=c.getId()%>">
 						<button type="submit">Ajout Favoris</button>
 					</form>
 				</td>
 				<td>
-					<form action="ControleurAnnuaire?action=supprimeEntreprise" method="post">
+					<form action="ControleurUser?action=supprimeEntreprise" method="post">
 						<input type="hidden" name="user" value="<%=user.getId()%>">
 						<input type="hidden" name="contact" value="<%=c.getId()%>">
 						<button type="submit">Supprime</button>

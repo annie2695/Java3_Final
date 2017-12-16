@@ -1,5 +1,6 @@
 package com.service;
 
+import java.io.File;
 import java.io.FileOutputStream;
 import java.util.Set;
 
@@ -106,7 +107,7 @@ public class ServicePDF {
 		return tab;
 	}
 	
-	public static void generePDF(User u) {
+	public static boolean generePDF(User u) {
 		Document doc = new Document();
 		
 		try {
@@ -128,6 +129,7 @@ public class ServicePDF {
 		} catch (Exception e) {
 			logger.error(e.getMessage());
 		}
+		return new File(PATH_PDF+u.getCredentials().getUsername()+".pdf").exists();
 	}
 
 }

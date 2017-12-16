@@ -60,7 +60,7 @@
 				<td><%= ((Contact)c).getCourriel()%></td>
 				<td><%= ((Contact)c).getAddress().toString()%></td>
 				<td>
-					<form action="ControleurAnnuaire?action=supprimeAnnuaireP" method="post">
+					<form action="ControleurAdmin?action=supprimeAnnuaireP" method="post">
 						<input type="hidden" name="admin" value="<%= admin.getId()%>">
 						<input type="hidden" name="contact" value="<%= c.getId()%>">
 						<button type="submit">Supprime</button>
@@ -95,7 +95,7 @@
 				<td><%= ((Contact)c).getCourriel()%></td>
 				<td><%= ((Contact)c).getAddress().toString()%></td>
 				<td>
-					<form action="ControleurAnnuaire?action=supprimeAnnuaireE" method="post">
+					<form action="ControleurAdmin?action=supprimeAnnuaireE" method="post">
 						<input type="hidden" name="admin" value="<%= admin.getId()%>">
 						<input type="hidden" name="contact" value="<%= c.getId()%>">
 						<button type="submit">Supprime</button>

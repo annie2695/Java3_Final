@@ -14,7 +14,7 @@
 </head>
 <body>
 
-<form method="post" action="ControleurAnnuaire?action=nouveauEntreprise">
+<form method="post" action="ControleurAdmin?action=nouveauEntreprise">
 	<div class="container">
 		<label><b>Nom</b></label> 
 		<input type="text" name="nom" required>

@@ -44,7 +44,7 @@
 				<td><%= ((Contact)c).getCourriel()%></td>
 				<td><%= ((Contact)c).getAddress().toString()%></td>
 				<td>
-					<form action="ControleurAnnuaire?action=ajouterParticulier" method="post">
+					<form action="ControleurUser?action=ajouterParticulier" method="post">
 						<input type="hidden" name="user" value="<%= user.getId()%>">
 						<input type="hidden" name="contact" value="<%= c.getId()%>">
 						<button type="submit">Ajouter au carnet</button>
@@ -79,7 +79,7 @@
 				<td><%= ((Contact)c).getCourriel()%></td>
 				<td><%= ((Contact)c).getAddress().toString()%></td>
 				<td>
-					<form action="ControleurAnnuaire?action=ajouterEntreprise" method="post">
+					<form action="ControleurUser?action=ajouterEntreprise" method="post">
 						<input type="hidden" name="user" value="<%= user.getId()%>">
 						<input type="hidden" name="contact" value="<%= c.getId()%>">
 						<button type="submit">Ajouter au carnet</button>
