@@ -8,7 +8,6 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import com.bean.IBean;
-import com.bean.annuaire.Annuaire;
 import com.bean.compte.User;
 import com.bean.contact.Entreprise;
 import com.bean.contact.Particulier;
@@ -90,8 +89,6 @@ public class ServicePDF {
 		tab.addCell("Téléphone");
 		tab.addCell("Courriel");
 		tab.addCell("Adresse");
-		
-		System.out.println(contacts);
 		
 		for (IBean c : contacts) {
 			if (c instanceof Particulier) {

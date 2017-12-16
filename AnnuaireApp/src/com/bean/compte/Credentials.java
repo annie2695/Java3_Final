@@ -2,6 +2,8 @@ package com.bean.compte;
 
 import java.util.Map;
 
+import com.service.LireCompteurProperties;
+
 /**
  * @author <b>Maxime Pigeon</b> & <b>Annie Legault</b>
  * 
@@ -13,8 +15,6 @@ public class Credentials {
 	private int id;
 	private String username, pwd;
 	
-	private static int compteur = 1;
-	
 	private Map<String, String> secretsQuestions;
 	
 	/**
@@ -23,7 +23,7 @@ public class Credentials {
 	 * @param pwd Le mot de passe
 	 */
 	public Credentials(String username, String pwd) {
-		this.id = compteur++;
+		this.id = LireCompteurProperties.getCompteur("credentials");
 		this.username = username;
 		this.pwd = pwd;
 	}

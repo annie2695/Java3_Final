@@ -1,25 +1,22 @@
 package com.bean.contact;
 
 import com.bean.IBean;
+import com.service.LireCompteurProperties;
 
-// TODO: Auto-generated Javadoc
 /**
  * La classe address représente l'adresse du contact dans l'annuaire.
  *
  * @author blade
  */
 public class Address implements IBean{
-
+	
+	private int id;
 	private String numeroCivique;
 	private String rue;
 	private String ville;
 	private String codePostal;
 	private String province;
 	private Contact contact;
-	
-	private static int compteur = 1;
-	
-	private int id;
 	
 	/**
 	 * Instancie une nouvelle adresse.
@@ -32,7 +29,7 @@ public class Address implements IBean{
 	 */
 	public Address(String numeroCivique, String rue, String ville, String codePostal, String province) {
 		super();
-		this.id = compteur++;
+		this.id = LireCompteurProperties.getCompteur("address");	
 		this.numeroCivique = numeroCivique;
 		this.rue = rue;
 		this.ville = ville;

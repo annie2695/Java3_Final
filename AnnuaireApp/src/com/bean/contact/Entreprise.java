@@ -22,7 +22,6 @@ public class Entreprise extends Contact{
 		super();
 		this.address = new Address(numeroCivique, rue, ville, codePostal, province);
 		this.address.setContact(this);
-		
 	}
 
 	/**

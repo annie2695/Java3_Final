@@ -1,6 +1,7 @@
 package com.bean.compte;
 
 import com.bean.IBean;
+import com.service.LireCompteurProperties;
 
 /**
  * @author <b>Maxime Pigeon</b> & <b>Annie Legault</b>
@@ -11,7 +12,6 @@ import com.bean.IBean;
  */
 public abstract class Compte implements IBean {
 	
-	protected static int compteur = 1;
 	protected int id;
 	
 	private String nom, prenom;
@@ -21,7 +21,7 @@ public abstract class Compte implements IBean {
 	 * Constructeur de la classe.
 	 */
 	public Compte() {
-		this.id = compteur++;
+		this.id = LireCompteurProperties.getCompteur("compte");
 	}
 
 	/**

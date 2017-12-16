@@ -1,13 +1,13 @@
 package com.bean.contact;
 
 import com.bean.IBean;
+import com.service.LireCompteurProperties;
 
 /**
  * La classe abstraite contact représente les informations d'une personne qui est dans l'annuaire.
  */
 public abstract class Contact implements IBean, Comparable<IBean>{
 
-	protected static int compteur = 1;
 	protected int id;
 	protected Address address;
 	protected String courriel;
@@ -16,7 +16,7 @@ public abstract class Contact implements IBean, Comparable<IBean>{
 	
 	public Contact() {
 		super();
-		this.id = compteur++;
+		this.id = LireCompteurProperties.getCompteur("contact");
 	}
 	
 	/**

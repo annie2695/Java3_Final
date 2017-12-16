@@ -3,7 +3,12 @@ package com.service;
 import java.io.FileInputStream;
 import java.util.Properties;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 public class LireMailProperties {
+	
+	private static Logger logger = LogManager.getLogger(LireMailProperties.class);
 	
 	public static Properties getMailProperties(){
 		
@@ -19,7 +24,7 @@ public class LireMailProperties {
 			props.setProperty("mail.password", props.getProperty("password"));
 		} 
 		catch (Exception e) {
-			System.out.println(e.getMessage());
+			logger.info(e.getMessage());
 		}
 		return props;
 		

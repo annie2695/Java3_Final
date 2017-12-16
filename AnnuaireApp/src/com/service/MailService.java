@@ -24,7 +24,6 @@ public class MailService {
 			Properties props = LireMailProperties.getMailProperties();
 			Authenticator auth = new SMTPAuthenticator(props.getProperty("mail.user"), props.getProperty("mail.password"));
 			Session session = Session.getInstance(props, auth);
-			
 			MimeMessage mimeMessage = new MimeMessage(session);
 			mimeMessage.setFrom(new InternetAddress(from));
 			mimeMessage.addRecipient(Message.RecipientType.TO, new InternetAddress(to));
@@ -51,13 +50,4 @@ private class SMTPAuthenticator extends Authenticator{
 			return authentication;
 		}
 	}
-
-/*
-public static void main(String[] args) {
-	MailService mail = new MailService();
-	mail.sendMail("test@test.ca", "Blademax838@hotmail.com", "Test Mail From TpFinal", "test01");
-}
-*/	
-
-	
 }

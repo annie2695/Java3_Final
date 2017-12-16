@@ -5,6 +5,7 @@ import java.util.Set;
 
 import com.bean.IBean;
 import com.bean.compte.User;
+import com.service.LireCompteurProperties;
 
 /**
  * @author <b>Maxime Pigeon</b> & <b>Annie Legault</b>
@@ -13,7 +14,6 @@ import com.bean.compte.User;
  */
 public class AddressBook implements IBean {
 
-	private static int compteur = 1;
 	private int id;
 	
 	private Set<IBean> favoris;
@@ -26,7 +26,7 @@ public class AddressBook implements IBean {
 	 * Constructeur de la classe.
 	 */
 	public AddressBook() {
-		this.id = compteur++;		
+		this.id = LireCompteurProperties.getCompteur("adressBook");		
 		this.favoris = new HashSet<IBean>();
 		this.listeParticuliers = new HashSet<IBean>();
 		this.listeEntreprises = new HashSet<IBean>();
@@ -106,12 +106,11 @@ public class AddressBook implements IBean {
 		this.favoris = favoris;
 	}
 
+
 	@Override
 	public String toString() {
 		return "AddressBook [id=" + id + ", favoris=" + favoris + ", listeParticuliers=" + listeParticuliers
 				+ ", listeEntreprises=" + listeEntreprises + ", user=" + user + "]";
 	}
-	
-	
 	
 }
